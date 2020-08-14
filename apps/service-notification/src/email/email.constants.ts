@@ -10,8 +10,8 @@ export const SENDGRID_TEMPLATE_IDS = {
   confirmationPasswordReset: 'd-d-************************************',
 };
 
-export const DASHBOARD_APP_LINK = 'https://app.ultimatebackend.io';
-export const DASHBOARD_WEBSITE_LINK = 'https://ultimatebackend.io';
+export const DASHBOARD_APP_LINK = 'https://app.sunshine.io';
+export const DASHBOARD_WEBSITE_LINK = 'https://sunshine.io';
 
 export const QUEUE_PROCESS_IDS = {
   SendVerificationCode: 'SendVerificationCode',

@@ -1,7 +1,9 @@
 import * as vhost from 'vhost';
-import { MultiTenancyConfig } from '../interface';
-import { IRequest } from '@ultimatebackend/common';
+
+import { IRequest } from '@ssc/common';
+
 import { BuildTenantInfoHelper } from '../';
+import { MultiTenancyConfig } from '../interface';
 
 export function enableMultiTenancy(option: MultiTenancyConfig) {
   if (option.tenantResolver.resolverType === 'Domain') {

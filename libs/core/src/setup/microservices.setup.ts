@@ -1,8 +1,9 @@
+import { join } from 'path';
+
+import { NestCloud } from '@nestcloud/core';
 import { INestApplication, Logger } from '@nestjs/common';
 import { Transport } from '@nestjs/microservices';
-import { NestCloud } from '@nestcloud/core';
-import { join } from 'path';
-import { AppUtils } from '@ultimatebackend/common';
+import { AppUtils } from '@ssc/common';
 
 interface MicroserviceSetupOptions {
   enableMqtt?: boolean;

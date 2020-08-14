@@ -1,23 +1,14 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import {
-  AuthServicesTypes,
-  UserEntity,
-  UserRepository,
-} from '@ultimatebackend/repository';
-import { generateVerificationCode } from '@ultimatebackend/common/utils/verification-code-generator';
-import {
-  CreateResponse,
-  LoginServiceTypes,
-} from '@ultimatebackend/proto-schema/account';
-import { RegisterUserCommand } from '../../impl';
-import { UserRegisteredEvent } from '@ultimatebackend/core/cqrs';
-import { RpcException } from '@nestjs/microservices';
 import { JwtService } from '@nestjs/jwt';
-import {
-  BillingsRpcClientService,
-  RolesRpcClientService,
-} from '@ultimatebackend/core';
+import { RpcException } from '@nestjs/microservices';
+import { generateVerificationCode } from '@ssc/common/utils/verification-code-generator';
+import { BillingsRpcClientService, RolesRpcClientService } from '@ssc/core';
+import { UserRegisteredEvent } from '@ssc/core/cqrs';
+import { CreateResponse, LoginServiceTypes } from '@ssc/proto-schema/account';
+import { AuthServicesTypes, UserEntity, UserRepository } from '@ssc/repository';
+
+import { RegisterUserCommand } from '../../impl';
 
 /**
  * @implements {ICommandHandler<RegisterUserCommand>}

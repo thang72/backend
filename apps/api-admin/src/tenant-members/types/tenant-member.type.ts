@@ -1,6 +1,7 @@
 import { Directive, Field, ObjectType } from '@nestjs/graphql';
-import { Filterable } from '@ultimatebackend/core';
-import { AppRole, InvitationStatus, Node } from '@ultimatebackend/contracts';
+import { AppRole, InvitationStatus, Node } from '@ssc/contracts';
+import { Filterable } from '@ssc/core';
+
 import { Tenant } from '../../tenants/types';
 import { User } from '../../users/types';
 

@@ -1,3 +1,6 @@
+import { InjectStripe } from 'nestjs-stripe';
+import * as Stripe from 'stripe';
+
 import {
   CACHE_MANAGER,
   CacheStore,
@@ -6,23 +9,22 @@ import {
   Logger,
   OnModuleInit,
 } from '@nestjs/common';
-import { InjectStripe } from 'nestjs-stripe';
-import * as Stripe from 'stripe';
+import { RpcException } from '@nestjs/microservices';
+import { reduceByPercent } from '@ssc/common';
 import {
   FindStripePlansRequest,
   FindStripePlansResponse,
   ReadStripePlanRequest,
   ReadStripePlanResponse,
   StripePlan,
-} from '@ultimatebackend/proto-schema/billing';
-import { RpcException } from '@nestjs/microservices';
+} from '@ssc/proto-schema/billing';
+import { PlanRepository } from '@ssc/repository';
+
 import {
   planSliceToProtoStripePlanSlice,
   planToProtoStripePlan,
 } from '../common';
 import { PlanSeed } from './plan.seed';
-import { reduceByPercent } from '@ultimatebackend/common';
-import { PlanRepository } from '@ultimatebackend/repository';
 
 @Injectable()
 export class PlansService implements OnModuleInit {

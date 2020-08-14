@@ -1,7 +1,9 @@
-import { Injectable } from '@nestjs/common';
 import { join } from 'path';
-import { RpcClient, GrpcClient, Service } from '@nestcloud/grpc';
-import { RoleServiceClient } from '@ultimatebackend/proto-schema';
+
+import { GrpcClient, RpcClient, Service } from '@nestcloud/grpc';
+import { Injectable } from '@nestjs/common';
+import { RoleServiceClient } from '@ssc/proto-schema';
+
 import { SERVICE_LIST } from '../../constants';
 
 @Injectable()

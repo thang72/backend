@@ -1,24 +1,17 @@
-import { Logger } from '@nestjs/common';
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import {
-  TenantMemberEmbed,
-  TenantRepository,
-} from '@ultimatebackend/repository';
-import {
-  MemberInvitedEvent,
-  RolesRpcClientService,
-} from '@ultimatebackend/core';
-import { v1 as uuidv1 } from 'uuid';
 import { DateTime } from 'luxon';
 import { ObjectId } from 'mongodb';
-import { InviteMemberCommand } from '../../impl';
-import { AppRole, InvitationStatus } from '@ultimatebackend/contracts';
-import {
-  InviteMemberResponse,
-  Member,
-} from '@ultimatebackend/proto-schema/tenant';
-import { RpcException } from '@nestjs/microservices';
+import { v1 as uuidv1 } from 'uuid';
+
+import { Logger } from '@nestjs/common';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { JwtService } from '@nestjs/jwt';
+import { RpcException } from '@nestjs/microservices';
+import { AppRole, InvitationStatus } from '@ssc/contracts';
+import { MemberInvitedEvent, RolesRpcClientService } from '@ssc/core';
+import { InviteMemberResponse, Member } from '@ssc/proto-schema/tenant';
+import { TenantMemberEmbed, TenantRepository } from '@ssc/repository';
+
+import { InviteMemberCommand } from '../../impl';
 
 @CommandHandler(InviteMemberCommand)
 export class InviteMemberHandler

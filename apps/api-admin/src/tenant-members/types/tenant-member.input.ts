@@ -1,5 +1,5 @@
 import { ArgsType, Field, ID, InputType } from '@nestjs/graphql';
-import { AppRole, InvitationStatus } from '@ultimatebackend/contracts';
+import { AppRole, InvitationStatus } from '@ssc/contracts';
 
 @InputType()
 export class InviteMemberInput {

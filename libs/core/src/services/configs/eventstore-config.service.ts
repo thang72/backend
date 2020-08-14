@@ -1,11 +1,11 @@
-import { Injectable } from '@nestjs/common';
+import {
+  EventStoreModuleOptions,
+  EventStoreOptionsFactory,
+} from '@juicycleff/nestjs-event-store';
 import { InjectConfig } from '@nestcloud/config';
 import { EtcdConfig } from '@nestcloud/config/etcd-config';
-import {
-  EventStoreOptionsFactory,
-  EventStoreModuleOptions,
-} from '@juicycleff/nestjs-event-store';
-import { ConsulDatabaseConfig } from '@ultimatebackend/common';
+import { Injectable } from '@nestjs/common';
+import { ConsulDatabaseConfig } from '@ssc/common';
 
 @Injectable()
 export class EventstoreConfigService implements EventStoreOptionsFactory {

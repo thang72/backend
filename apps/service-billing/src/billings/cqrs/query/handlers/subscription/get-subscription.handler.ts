@@ -1,14 +1,16 @@
-import { Logger, CACHE_MANAGER, Inject, CacheStore } from '@nestjs/common';
-import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { InjectStripe } from 'nestjs-stripe';
 import * as Stripe from 'stripe';
-import { GetSubscriptionQuery } from '../../impl';
+
+import { CACHE_MANAGER, CacheStore, Inject, Logger } from '@nestjs/common';
+import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
+import { RpcException } from '@nestjs/microservices';
 import {
   ReadSubscriptionResponse,
   TenantSubscription,
-} from '@ultimatebackend/proto-schema/billing';
-import { RpcException } from '@nestjs/microservices';
+} from '@ssc/proto-schema/billing';
+
 import { subsToProtoStripeSubs } from '../../../../../common';
+import { GetSubscriptionQuery } from '../../impl';
 
 @QueryHandler(GetSubscriptionQuery)
 export class GetSubscriptionHandler

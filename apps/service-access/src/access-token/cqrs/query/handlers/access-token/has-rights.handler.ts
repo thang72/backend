@@ -1,8 +1,10 @@
+import { NestCasbinService } from 'nestjs-casbin';
+
 import { CACHE_MANAGER, CacheStore, Inject, Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { HasRightsResponse } from '@ultimatebackend/proto-schema/access';
-import { NestCasbinService } from 'nestjs-casbin';
 import { RpcException } from '@nestjs/microservices';
+import { HasRightsResponse } from '@ssc/proto-schema/access';
+
 import { HasRightsQuery } from '../../impl';
 
 @QueryHandler(HasRightsQuery)

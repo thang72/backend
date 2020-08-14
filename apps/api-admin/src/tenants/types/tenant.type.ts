@@ -1,13 +1,14 @@
 import {
-  ObjectType,
   Directive,
-  GraphQLISODateTime,
   Field,
+  GraphQLISODateTime,
   InputType,
   Int,
+  ObjectType,
 } from '@nestjs/graphql';
-import { Node } from '@ultimatebackend/contracts';
-import { Filterable } from '@ultimatebackend/core';
+import { Node } from '@ssc/contracts';
+import { Filterable } from '@ssc/core';
+
 import { Member } from '../../tenant-members/types';
 
 @InputType('MqttConfigInput')

@@ -1,10 +1,11 @@
-import { Module } from '@nestjs/common';
-import { ProjectRepository } from '@ultimatebackend/repository';
 import {
-  EventStoreSubscriptionType,
   EventStoreModule,
+  EventStoreSubscriptionType,
 } from '@juicycleff/nestjs-event-store';
-import { ProjectQueryHandlers, ProjectCommandHandlers } from './cqrs';
+import { Module } from '@nestjs/common';
+import { ProjectRepository } from '@ssc/repository';
+
+import { ProjectCommandHandlers, ProjectQueryHandlers } from './cqrs';
 import { ProjectsController } from './projects.controller';
 
 @Module({

@@ -1,6 +1,6 @@
 import { IQuery } from '@nestjs/cqrs';
-import { ProjectRepository } from '@ultimatebackend/repository';
-import { ReadProjectRequest } from '@ultimatebackend/proto-schema/project';
+import { ReadProjectRequest } from '@ssc/proto-schema/project';
+import { ProjectRepository } from '@ssc/repository';
 
 export class GetProjectQuery implements IQuery {
   constructor(

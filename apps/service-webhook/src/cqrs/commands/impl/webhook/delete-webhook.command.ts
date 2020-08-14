@@ -1,6 +1,6 @@
 import { ICommand } from '@nestjs/cqrs';
-import { DeleteWebhookRequest } from '@ultimatebackend/proto-schema/webhook';
-import { WebhookRepository } from '@ultimatebackend/repository';
+import { DeleteWebhookRequest } from '@ssc/proto-schema/webhook';
+import { WebhookRepository } from '@ssc/repository';
 
 export class DeleteWebhookCommand implements ICommand {
   constructor(

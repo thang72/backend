@@ -1,6 +1,6 @@
 import { ICommand } from '@nestjs/cqrs';
-import { UpdateWebhookRequest } from '@ultimatebackend/proto-schema/webhook';
-import { UserEntity, WebhookRepository } from '@ultimatebackend/repository';
+import { UpdateWebhookRequest } from '@ssc/proto-schema/webhook';
+import { UserEntity, WebhookRepository } from '@ssc/repository';
 
 export class UpdateWebhookCommand implements ICommand {
   constructor(

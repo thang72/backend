@@ -1,11 +1,13 @@
+import { NestCasbinService } from 'nestjs-casbin';
+
 import { CACHE_MANAGER, CacheStore, Inject, Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { ReadAccessResponse } from '@ultimatebackend/proto-schema/access';
-import { NestCasbinService } from 'nestjs-casbin';
 import { RpcException } from '@nestjs/microservices';
-import { ReadAccessQuery } from '../../impl';
-import { AccessTokenRepository } from '@ultimatebackend/repository';
+import { ReadAccessResponse } from '@ssc/proto-schema/access';
+import { AccessTokenRepository } from '@ssc/repository';
+
 import { mapAccessTokenEntityToProto } from '../../../../utitlity';
+import { ReadAccessQuery } from '../../impl';
 
 @QueryHandler(ReadAccessQuery)
 export class ReadAccessHandler implements IQueryHandler<ReadAccessQuery> {

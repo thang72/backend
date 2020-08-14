@@ -1,5 +1,5 @@
 import { Field, ID, InputType, Int } from '@nestjs/graphql';
-import { AddressInput } from '@ultimatebackend/contracts';
+import { AddressInput } from '@ssc/contracts';
 
 @InputType()
 export class CardInput {

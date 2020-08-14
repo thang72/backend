@@ -1,4 +1,12 @@
+import { UseGuards } from '@nestjs/common';
 import { Args, Context, ResolveField, Resolver } from '@nestjs/graphql';
+import { GqlAuthGuard, GqlContext, Resource, setRpcContext } from '@ssc/core';
+import {
+  CreateTenantRequest,
+  Tenant as RpcTenant,
+  UpdateTenantRequest,
+} from '@ssc/proto-schema/tenant';
+
 import {
   CreateTenantInput,
   DeleteTenantInput,
@@ -6,18 +14,6 @@ import {
   TenantMutations,
   UpdateTenantInput,
 } from './types';
-import {
-  GqlAuthGuard,
-  GqlContext,
-  Resource,
-  setRpcContext,
-} from '@ultimatebackend/core';
-import { UseGuards } from '@nestjs/common';
-import {
-  CreateTenantRequest,
-  Tenant as RpcTenant,
-  UpdateTenantRequest,
-} from '@ultimatebackend/proto-schema/tenant';
 
 @Resolver(() => TenantMutations)
 export class TenantsMutationResolver {

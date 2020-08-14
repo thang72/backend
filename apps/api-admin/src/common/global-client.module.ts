@@ -1,13 +1,13 @@
 import { Global, Module } from '@nestjs/common';
 import {
   AccessTokenRpcClientService,
+  AccountsRpcClientService,
+  BillingsRpcClientService,
   GlobalClientService,
   RolesRpcClientService,
   TenantsRpcClientService,
-  AccountsRpcClientService,
-  BillingsRpcClientService,
   WebhooksRpcClientService,
-} from '@ultimatebackend/core';
+} from '@ssc/core';
 
 @Global()
 @Module({

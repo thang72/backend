@@ -1,4 +1,4 @@
-import { Plan } from '@ultimatebackend/proto-schema/billing';
+import { Plan } from '@ssc/proto-schema/billing';
 
 export class PlanSeed {
   plans: Plan[];

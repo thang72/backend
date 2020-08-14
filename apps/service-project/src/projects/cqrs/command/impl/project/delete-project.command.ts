@@ -1,6 +1,6 @@
 import { ICommand } from '@nestjs/cqrs';
-import { ProjectRepository, UserEntity } from '@ultimatebackend/repository';
-import { DeleteProjectRequest } from '@ultimatebackend/proto-schema/project';
+import { DeleteProjectRequest } from '@ssc/proto-schema/project';
+import { ProjectRepository, UserEntity } from '@ssc/repository';
 
 export class DeleteProjectCommand implements ICommand {
   constructor(

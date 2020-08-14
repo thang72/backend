@@ -1,16 +1,17 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { UserEntity, UserRepository } from '@ultimatebackend/repository';
-import { validPassword } from '@ultimatebackend/common/utils';
-import { UserLoggedInEvent } from '@ultimatebackend/core/cqrs';
-import { NotFoundError, ValidationError } from '@ultimatebackend/common/errors';
+import { RpcException } from '@nestjs/microservices';
+import { NotFoundError, ValidationError } from '@ssc/common/errors';
+import { validPassword } from '@ssc/common/utils';
+import { UserLoggedInEvent } from '@ssc/core/cqrs';
 import {
   LoginRequest,
   LoginResponse,
   LoginServiceTypes,
-} from '@ultimatebackend/proto-schema/account';
+} from '@ssc/proto-schema/account';
+import { UserEntity, UserRepository } from '@ssc/repository';
+
 import { LoginUserCommand } from '../../impl';
-import { RpcException } from '@nestjs/microservices';
 
 /**
  * @implements {ICommandHandler<LoginUserCommand>}

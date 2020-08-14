@@ -1,6 +1,7 @@
-import { Scalar, CustomScalar } from '@nestjs/graphql';
 import { Kind, ValueNode } from 'graphql';
-import { fromCursor, toCursor } from '@ultimatebackend/common/utils';
+
+import { CustomScalar, Scalar } from '@nestjs/graphql';
+import { fromCursor, toCursor } from '@ssc/common/utils';
 
 export type GqlCursor = string;
 

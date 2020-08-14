@@ -1,6 +1,7 @@
 import { randomBytes } from 'crypto';
-import { AccessTokenEntity } from '@ultimatebackend/repository';
-import { Access } from '@ultimatebackend/proto-schema/access';
+
+import { Access } from '@ssc/proto-schema/access';
+import { AccessTokenEntity } from '@ssc/repository';
 
 export async function generateUniqueByte() {
   const buffer = await randomBytes(12);

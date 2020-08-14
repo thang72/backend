@@ -1,4 +1,5 @@
 import { ICard, invoices, plans, subscriptions } from 'stripe';
+
 import {
   Card,
   Invoice,
@@ -7,7 +8,7 @@ import {
   StripePlan,
   SubscriptionStatus,
   TenantSubscription,
-} from '@ultimatebackend/proto-schema/billing';
+} from '@ssc/proto-schema/billing';
 
 export function cardToProtoCard(card: ICard, defaultSourceId: string): Card {
   return {

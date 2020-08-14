@@ -1,20 +1,21 @@
-import { Module } from '@nestjs/common';
 import {
-  EventStoreSubscriptionType,
   EventStoreModule,
+  EventStoreSubscriptionType,
 } from '@juicycleff/nestjs-event-store';
+import { BullModule } from '@nestjs/bull';
+import { Module } from '@nestjs/common';
 import {
   EmailVerifiedEvent,
   ForgotPasswordSentEvent,
   UserLoggedInEvent,
   UserRegisteredEvent,
   VerificationEmailSentEvent,
-} from '@ultimatebackend/core';
-import { BullModule } from '@nestjs/bull';
-import { EmailService } from './email.service';
-import { AuthSagas } from './sagas';
-import { AuthProcess } from './queue';
+} from '@ssc/core';
+
 import { BullConfigService } from '../configs/bull-config.service';
+import { EmailService } from './email.service';
+import { AuthProcess } from './queue';
+import { AuthSagas } from './sagas';
 
 @Module({
   imports: [

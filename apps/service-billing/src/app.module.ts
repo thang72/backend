@@ -1,17 +1,19 @@
-import { Module } from '@nestjs/common';
+import { StripeModule } from 'nestjs-stripe';
+
 import { MongoModule } from '@juicycleff/repo-orm';
+import { Module } from '@nestjs/common';
 import {
   CoreModule,
   MongoConfigService,
   ServiceRegistryModule,
-} from '@ultimatebackend/core';
-import { StripeModule } from 'nestjs-stripe';
+} from '@ssc/core';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CardsModule } from './cards/cards.module';
-import { CommonModule } from './common/common.module';
-import { StripeModuleConfigService } from './common';
 import { BillingsModule } from './billings/billings.module';
+import { CardsModule } from './cards/cards.module';
+import { StripeModuleConfigService } from './common';
+import { CommonModule } from './common/common.module';
 import { PlansModule } from './plans/plans.module';
 
 @Module({

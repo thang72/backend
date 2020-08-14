@@ -1,14 +1,13 @@
+import { ApolloError, UserInputError } from 'apollo-server-express';
+
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { ApolloError, UserInputError } from 'apollo-server-express';
-import { TenantRepository } from '@ultimatebackend/repository';
-import { TenantRemovedEvent } from '@ultimatebackend/core';
-import { ConflictError } from '@ultimatebackend/common';
+import { ConflictError } from '@ssc/common';
+import { TenantRemovedEvent } from '@ssc/core';
+import { DeleteTenantResponse, Tenant } from '@ssc/proto-schema/tenant';
+import { TenantRepository } from '@ssc/repository';
+
 import { RemoveTenantCommand } from '../../impl';
-import {
-  DeleteTenantResponse,
-  Tenant,
-} from '@ultimatebackend/proto-schema/tenant';
 
 /**
  * @class

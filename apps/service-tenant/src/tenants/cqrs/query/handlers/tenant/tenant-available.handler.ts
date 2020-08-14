@@ -1,8 +1,9 @@
 import { Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { TenantRepository } from '@ultimatebackend/repository/repositories';
 import { RpcException } from '@nestjs/microservices';
-import { TenantAvailableResponse } from '@ultimatebackend/proto-schema/tenant';
+import { TenantAvailableResponse } from '@ssc/proto-schema/tenant';
+import { TenantRepository } from '@ssc/repository/repositories';
+
 import { TenantAvailableQuery } from '../../impl';
 
 @QueryHandler(TenantAvailableQuery)

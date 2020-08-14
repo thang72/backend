@@ -1,20 +1,21 @@
-import { Module } from '@nestjs/common';
-import { BillingsController } from './billings.controller';
-import { CardsModule } from '../cards/cards.module';
 import {
   EventStoreModule,
   EventStoreSubscriptionType,
 } from '@juicycleff/nestjs-event-store';
+import { Module } from '@nestjs/common';
+import { PlanRepository } from '@ssc/repository';
+
+import { CardsModule } from '../cards/cards.module';
 import { PlansModule } from '../plans/plans.module';
+import { BillingsController } from './billings.controller';
 import {
-  SubscriptionCommandHandlers,
-  SubscriptionQueryHandlers,
+  CustomerCommandHandlers,
+  InvoiceQueryHandlers,
   PlanCommandHandlers,
   PlanQueryHandlers,
-  InvoiceQueryHandlers,
-  CustomerCommandHandlers,
+  SubscriptionCommandHandlers,
+  SubscriptionQueryHandlers,
 } from './cqrs';
-import { PlanRepository } from '@ultimatebackend/repository';
 
 @Module({
   imports: [

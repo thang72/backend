@@ -1,12 +1,13 @@
+import { MongoModule } from '@juicycleff/repo-orm';
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import {
   CoreModule,
   MongoConfigService,
   ServiceRegistryModule,
-} from '@ultimatebackend/core';
-import { MongoModule } from '@juicycleff/repo-orm';
+} from '@ssc/core';
+
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 import { WebhookModule } from './webhook/webhook.module';
 
 @Module({

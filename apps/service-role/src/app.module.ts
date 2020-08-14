@@ -1,11 +1,13 @@
+import { NestCasbinModule } from 'nestjs-casbin';
+
 import { Module } from '@nestjs/common';
+import { CoreModule, ServiceRegistryModule } from '@ssc/core';
+
+import { AdapterProviderModule } from './adapter.provider';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { RolesModule } from './roles/roles.module';
-import { NestCasbinModule } from 'nestjs-casbin';
 import { CasbinUserConfigService } from './casbin-config';
-import { CoreModule, ServiceRegistryModule } from '@ultimatebackend/core';
-import { AdapterProviderModule } from './adapter.provider';
+import { RolesModule } from './roles/roles.module';
 
 @Module({
   imports: [

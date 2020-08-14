@@ -1,10 +1,11 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { UserEntity, UserRepository } from '@ultimatebackend/repository';
-import { VerifyEmailCommand } from '../../impl';
 import { RpcException } from '@nestjs/microservices';
-import { EmailVerifiedEvent } from '@ultimatebackend/core/cqrs';
-import * as Account from '@ultimatebackend/proto-schema';
+import { EmailVerifiedEvent } from '@ssc/core/cqrs';
+import * as Account from '@ssc/proto-schema';
+import { UserEntity, UserRepository } from '@ssc/repository';
+
+import { VerifyEmailCommand } from '../../impl';
 
 /**
  * @class

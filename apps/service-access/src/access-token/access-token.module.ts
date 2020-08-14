@@ -1,12 +1,13 @@
-import { Module } from '@nestjs/common';
-import { AccessTokenController } from './access-token.controller';
 import {
   EventStoreModule,
   EventStoreSubscriptionType,
 } from '@juicycleff/nestjs-event-store';
-import { AccessTokenRepository } from '@ultimatebackend/repository';
-import { AccessTokenQueryHandlers } from './cqrs/query/handlers/access-token';
+import { Module } from '@nestjs/common';
+import { AccessTokenRepository } from '@ssc/repository';
+
+import { AccessTokenController } from './access-token.controller';
 import { AccessTokenCommandHandlers } from './cqrs/commands/handlers/access-token';
+import { AccessTokenQueryHandlers } from './cqrs/query/handlers/access-token';
 
 @Module({
   imports: [

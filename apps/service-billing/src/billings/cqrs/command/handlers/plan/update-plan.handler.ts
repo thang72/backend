@@ -1,10 +1,12 @@
-import { Logger } from '@nestjs/common';
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { UpdatePlanCommand } from '../../impl';
 import { InjectStripe } from 'nestjs-stripe';
 import * as Stripe from 'stripe';
-import { CreatePlanResponse } from '@ultimatebackend/proto-schema/billing';
+
+import { Logger } from '@nestjs/common';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { RpcException } from '@nestjs/microservices';
+import { CreatePlanResponse } from '@ssc/proto-schema/billing';
+
+import { UpdatePlanCommand } from '../../impl';
 
 @CommandHandler(UpdatePlanCommand)
 export class UpdatePlanHandler implements ICommandHandler<UpdatePlanCommand> {

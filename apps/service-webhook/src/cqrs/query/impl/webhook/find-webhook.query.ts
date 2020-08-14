@@ -1,6 +1,6 @@
 import { IQuery } from '@nestjs/cqrs';
-import { FindWebhookRequest } from '@ultimatebackend/proto-schema/webhook';
-import { WebhookRepository } from '@ultimatebackend/repository';
+import { FindWebhookRequest } from '@ssc/proto-schema/webhook';
+import { WebhookRepository } from '@ssc/repository';
 
 export class FindWebhookQuery implements IQuery {
   constructor(

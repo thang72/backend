@@ -1,18 +1,19 @@
 import {
   Args,
-  Resolver,
-  Query,
-  Parent,
-  ResolveField,
   Context,
+  Parent,
+  Query,
+  ResolveField,
+  Resolver,
 } from '@nestjs/graphql';
-import { Plan } from './types';
-import { Price } from '@ultimatebackend/contracts';
-import { GqlContext } from '@ultimatebackend/core';
+import { Price } from '@ssc/contracts';
+import { GqlContext } from '@ssc/core';
 import {
-  StripePlan as StripePlanRpc,
   Plan as PlanRpc,
-} from '@ultimatebackend/proto-schema/billing';
+  StripePlan as StripePlanRpc,
+} from '@ssc/proto-schema/billing';
+
+import { Plan } from './types';
 
 @Resolver(() => Plan)
 export class PlansResolver {

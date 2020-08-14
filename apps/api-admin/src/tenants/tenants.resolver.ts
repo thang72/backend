@@ -1,3 +1,4 @@
+import { UseGuards, UseInterceptors } from '@nestjs/common';
 import {
   Args,
   Context,
@@ -8,21 +9,22 @@ import {
   Resolver,
 } from '@nestjs/graphql';
 import {
+  GqlAuthGuard,
+  GqlContext,
+  PermissionsInterceptor,
+  Resource,
+  setRpcContext,
+} from '@ssc/core';
+import { User as RpcUser } from '@ssc/proto-schema/account';
+import { Tenant as RpcTenant } from '@ssc/proto-schema/tenant';
+
+import { User } from '../users/types';
+import {
   Tenant,
   TenantFilterArgs,
   TenantFilterInput,
   TenantMutations,
 } from './types';
-import {
-  GqlAuthGuard,
-  PermissionsInterceptor,
-  setRpcContext,
-} from '@ultimatebackend/core';
-import { GqlContext, Resource } from '@ultimatebackend/core';
-import { UseGuards, UseInterceptors } from '@nestjs/common';
-import { User } from '../users/types';
-import { Tenant as RpcTenant } from '@ultimatebackend/proto-schema/tenant';
-import { User as RpcUser } from '@ultimatebackend/proto-schema/account';
 
 @UseInterceptors(PermissionsInterceptor)
 @Resolver(() => Tenant)

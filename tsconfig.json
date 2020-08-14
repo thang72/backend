@@ -14,22 +14,22 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "paths": {
-      "@ultimatebackend/core": [
+      "@ssc/core": [
         "libs/core/src"
       ],
-      "@ultimatebackend/core/*": [
+      "@ssc/core/*": [
         "libs/core/src/*"
       ],
-      "@ultimatebackend/common": [
+      "@ssc/common": [
         "libs/common/src"
       ],
-      "@ultimatebackend/common/*": [
+      "@ssc/common/*": [
         "libs/common/src/*"
       ],
-      "@ultimatebackend/repository": [
+      "@ssc/repository": [
         "libs/repository/src"
       ],
-      "@ultimatebackend/repository/*": [
+      "@ssc/repository/*": [
         "libs/repository/src/*"
       ],
       "@juicycleff/repo-orm": [
@@ -38,16 +38,16 @@
       "@juicycleff/repo-orm/*": [
         "libs/repo-orm/src/*"
       ],
-      "@ultimatebackend/contracts": [
+      "@ssc/contracts": [
         "libs/contracts/src"
       ],
-      "@ultimatebackend/contracts/*": [
+      "@ssc/contracts/*": [
         "libs/contracts/src/*"
       ],
-      "@ultimatebackend/proto-schema": [
+      "@ssc/proto-schema": [
         "libs/proto-schema/src"
       ],
-      "@ultimatebackend/proto-schema/*": [
+      "@ssc/proto-schema/*": [
         "libs/proto-schema/src/*"
       ]
     }

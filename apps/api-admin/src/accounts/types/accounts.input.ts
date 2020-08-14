@@ -1,5 +1,5 @@
-import { InputType, Field } from '@nestjs/graphql';
-import { ServiceTypes } from '@ultimatebackend/contracts';
+import { Field, InputType } from '@nestjs/graphql';
+import { ServiceTypes } from '@ssc/contracts';
 
 @InputType()
 export class LoginParamsInput {

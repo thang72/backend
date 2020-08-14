@@ -1,12 +1,13 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { UserEntity, UserRepository } from '@ultimatebackend/repository';
-import { ResendVerificationEmailCommand } from '../../impl';
-import { VerificationEmailSentEvent } from '@ultimatebackend/core/cqrs';
-import { generateVerificationCode } from '@ultimatebackend/common/utils/verification-code-generator';
-import { RpcException } from '@nestjs/microservices';
-import { ResendVerificationCodeResponse } from '@ultimatebackend/proto-schema/account';
 import { JwtService } from '@nestjs/jwt';
+import { RpcException } from '@nestjs/microservices';
+import { generateVerificationCode } from '@ssc/common/utils/verification-code-generator';
+import { VerificationEmailSentEvent } from '@ssc/core/cqrs';
+import { ResendVerificationCodeResponse } from '@ssc/proto-schema/account';
+import { UserEntity, UserRepository } from '@ssc/repository';
+
+import { ResendVerificationEmailCommand } from '../../impl';
 
 /**
  * @implements {ICommandHandler<ResendVerificationCodeResponse>}

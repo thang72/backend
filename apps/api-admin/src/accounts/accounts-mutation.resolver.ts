@@ -1,4 +1,15 @@
+import { ApolloError, UserInputError } from 'apollo-server-express';
+import { Observable } from 'rxjs';
+
+import { Logger, UseGuards } from '@nestjs/common';
 import { Args, Context, ResolveField, Resolver } from '@nestjs/graphql';
+import { NotImplementedError } from '@ssc/common';
+import { IdentifyMachineUtils } from '@ssc/common/utils/identify-machine.utils';
+import { BooleanPayload, ServiceTypes } from '@ssc/contracts';
+import { GqlAuthGuard, GqlContext } from '@ssc/core';
+import { CreateRequest, LoginServiceTypes } from '@ssc/proto-schema/account';
+
+import { User } from '../users/types';
 import {
   Account,
   AccountMutations,
@@ -8,18 +19,6 @@ import {
   RegisterInput,
   VerificationLinkInfo,
 } from './types';
-import { BooleanPayload, ServiceTypes } from '@ultimatebackend/contracts';
-import { NotImplementedError } from '@ultimatebackend/common';
-import { Logger, UseGuards } from '@nestjs/common';
-import { GqlAuthGuard, GqlContext } from '@ultimatebackend/core';
-import { ApolloError, UserInputError } from 'apollo-server-express';
-import { IdentifyMachineUtils } from '@ultimatebackend/common/utils/identify-machine.utils';
-import { Observable } from 'rxjs';
-import {
-  LoginServiceTypes,
-  CreateRequest,
-} from '@ultimatebackend/proto-schema/account';
-import { User } from '../users/types';
 
 @Resolver(() => AccountMutations)
 export class AccountsMutationResolver {

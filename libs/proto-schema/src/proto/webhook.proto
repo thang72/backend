@@ -2,7 +2,7 @@ syntax = "proto3";
 
 // import "google/protobuf/timestamp.proto";
 
-package io.ultimatebackend.srv.webhook;
+package srv.webhook;
 
 service WebhookService {
   rpc CreateWebhook(CreateWebhookRequest) returns (CreateWebhookResponse) {}
@@ -29,7 +29,6 @@ enum WebhookAuthType {
   OAUTH_2 = 4;
 }
 
-
 enum ApiKeyField {
   HEADER = 0;
   PARAMS = 1;
@@ -45,7 +44,6 @@ message Auth {
   string username = 7;
   string password = 8;
 }
-
 
 message Paginate {
   int32 skip = 1;

@@ -1,5 +1,6 @@
+import { IRequest } from '@ssc/common';
+
 import { MultiTenancyConfig, TenantInfo } from './interface';
-import { IRequest } from '@ultimatebackend/common';
 
 export class BuildTenantInfoHelper {
   private addOptions: boolean = true;

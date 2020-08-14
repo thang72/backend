@@ -1,12 +1,14 @@
-import { Logger } from '@nestjs/common';
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { InjectStripe } from 'nestjs-stripe';
 import * as Stripe from 'stripe';
-import { SubscriptionCreatedEvent } from '@ultimatebackend/core';
-import { CancelSubscriptionCommand } from '../../impl';
-import { CancelSubscriptionResponse } from '@ultimatebackend/proto-schema/billing';
+
+import { Logger } from '@nestjs/common';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { RpcException } from '@nestjs/microservices';
+import { SubscriptionCreatedEvent } from '@ssc/core';
+import { CancelSubscriptionResponse } from '@ssc/proto-schema/billing';
+
 import { subsToProtoStripeSubs } from '../../../../../common';
+import { CancelSubscriptionCommand } from '../../impl';
 
 @CommandHandler(CancelSubscriptionCommand)
 export class CancelSubscriptionHandler

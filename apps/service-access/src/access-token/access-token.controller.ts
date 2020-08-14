@@ -1,4 +1,7 @@
 import { Controller } from '@nestjs/common';
+import { CommandBus, QueryBus } from '@nestjs/cqrs';
+import { GrpcMethod } from '@nestjs/microservices';
+import { getIdentityFromCtx } from '@ssc/core';
 import {
   AccessService,
   CreateAccessRequest,
@@ -11,8 +14,8 @@ import {
   HasRightsResponse,
   ReadAccessRequest,
   ReadAccessResponse,
-} from '@ultimatebackend/proto-schema/access';
-import { CommandBus, QueryBus } from '@nestjs/cqrs';
+} from '@ssc/proto-schema/access';
+
 import {
   CreateAccessCommand,
   DeleteAccessCommand,
@@ -20,8 +23,6 @@ import {
   HasRightsQuery,
   ReadAccessQuery,
 } from './cqrs';
-import { getIdentityFromCtx } from '@ultimatebackend/core';
-import { GrpcMethod } from '@nestjs/microservices';
 
 @Controller('webhook')
 export class AccessTokenController implements AccessService<any> {

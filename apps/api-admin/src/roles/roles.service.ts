@@ -1,6 +1,6 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
-import { IResource, RolesRpcClientService } from '@ultimatebackend/core';
-import { getMetadataStorage } from '@ultimatebackend/core/metadata';
+import { IResource, RolesRpcClientService } from '@ssc/core';
+import { getMetadataStorage } from '@ssc/core/metadata';
 
 @Injectable()
 export class RolesService implements OnModuleInit {

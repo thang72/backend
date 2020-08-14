@@ -1,5 +1,7 @@
 import { Controller } from '@nestjs/common';
+import { CommandBus, QueryBus } from '@nestjs/cqrs';
 import { GrpcMethod } from '@nestjs/microservices';
+import { getIdentityFromCtx } from '@ssc/core';
 import {
   AcceptMemberInvitationRequest,
   AcceptMemberInvitationResponse,
@@ -13,9 +15,8 @@ import {
   ReadMemberResponse,
   UpdateMemberRequest,
   UpdateMemberResponse,
-} from '@ultimatebackend/proto-schema/tenant';
-import { getIdentityFromCtx } from '@ultimatebackend/core';
-import { CommandBus, QueryBus } from '@nestjs/cqrs';
+} from '@ssc/proto-schema/tenant';
+
 import {
   AcceptInvitationCommand,
   InviteMemberCommand,

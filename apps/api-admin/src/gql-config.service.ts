@@ -1,9 +1,11 @@
+import { RedisCache } from 'apollo-server-cache-redis';
+import { buildContext } from 'graphql-passport';
+import { RedisOptions } from 'ioredis';
+
+import { ConsulConfig, InjectConfig } from '@nestcloud/config';
 import { Injectable } from '@nestjs/common';
 import { GqlModuleOptions, GqlOptionsFactory } from '@nestjs/graphql';
-import { RedisCache } from 'apollo-server-cache-redis';
-import { corsApollOptions } from '@ultimatebackend/common';
-import { buildContext } from 'graphql-passport';
-import { ConsulConfig, InjectConfig } from '@nestcloud/config';
+import { corsApollOptions } from '@ssc/common';
 import {
   AccessTokenRpcClientService,
   AccountsRpcClientService,
@@ -12,8 +14,7 @@ import {
   RolesRpcClientService,
   TenantsRpcClientService,
   WebhooksRpcClientService,
-} from '@ultimatebackend/core';
-import { RedisOptions } from 'ioredis';
+} from '@ssc/core';
 
 @Injectable()
 export class GqlConfigService implements GqlOptionsFactory {

@@ -1,17 +1,13 @@
+import { UseGuards } from '@nestjs/common';
 import { Args, Context, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { GqlAuthGuard, GqlContext, Resource, setRpcContext } from '@ssc/core';
+
 import {
   AccessToken,
   AccessTokenFilterArgs,
   AccessTokenMutations,
   ReadAccessTokenInput,
 } from './types';
-import {
-  GqlAuthGuard,
-  GqlContext,
-  Resource,
-  setRpcContext,
-} from '@ultimatebackend/core';
-import { UseGuards } from '@nestjs/common';
 
 @Resolver(() => AccessToken)
 export class AccessTokenResolver {

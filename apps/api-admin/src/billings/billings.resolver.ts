@@ -1,3 +1,4 @@
+import { UseGuards } from '@nestjs/common';
 import {
   Args,
   Context,
@@ -6,14 +7,14 @@ import {
   ResolveField,
   Resolver,
 } from '@nestjs/graphql';
+import { GqlAuthGuard, Resource, setRpcContext } from '@ssc/core';
+
 import {
   Billing,
   BillingMutations,
   Invoice,
   TenantSubscription,
 } from './types';
-import { GqlAuthGuard, Resource, setRpcContext } from '@ultimatebackend/core';
-import { UseGuards } from '@nestjs/common';
 
 @Resolver(() => Billing)
 export class BillingsResolver {

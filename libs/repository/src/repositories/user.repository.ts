@@ -1,14 +1,16 @@
-import { CACHE_MANAGER, CacheStore, Inject, Injectable } from '@nestjs/common';
-import { Db, MongoClient } from 'mongodb';
 import { merge } from 'lodash';
-import { generateHashedPassword } from '@ultimatebackend/common/utils';
+import { Db, MongoClient } from 'mongodb';
+
 import {
   BaseMongoRepository,
   Before,
-  MongoEntityRepository,
   InjectClient,
   InjectDb,
+  MongoEntityRepository,
 } from '@juicycleff/repo-orm';
+import { CACHE_MANAGER, CacheStore, Inject, Injectable } from '@nestjs/common';
+import { generateHashedPassword } from '@ssc/common/utils';
+
 import { UserEntity } from '../entities';
 
 @Injectable()

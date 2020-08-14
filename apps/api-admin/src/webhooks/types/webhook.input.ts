@@ -1,18 +1,19 @@
 /* tslint:disable:max-classes-per-file */
-import { InputType, Field, ArgsType, ID } from '@nestjs/graphql';
+import { ArgsType, Field, ID, InputType } from '@nestjs/graphql';
 import {
   FilterMongo,
   PaginationInput,
-  WebhookHttpVerbEnum,
   WebhookCrudEnum,
-} from '@ultimatebackend/contracts';
+  WebhookHttpVerbEnum,
+} from '@ssc/contracts';
+
 import {
-  Webhook,
+  AuthApiKey,
   AuthBasic,
+  AuthNone,
   AuthOAuth2,
   AuthToken,
-  AuthApiKey,
-  AuthNone,
+  Webhook,
 } from './webhook.type';
 
 @InputType()

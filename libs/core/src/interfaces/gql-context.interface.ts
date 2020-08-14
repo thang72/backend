@@ -1,7 +1,9 @@
-import { Request as ExpressRequest } from 'express';
 import { DataSource } from 'apollo-datasource';
-import { PassportSubscriptionContext, PassportContext } from 'graphql-passport';
-import { UserEntity } from '@ultimatebackend/repository';
+import { Context } from 'apollo-server-core/src/types';
+import { Request as ExpressRequest } from 'express';
+import { PassportContext, PassportSubscriptionContext } from 'graphql-passport';
+
+import { TenantInfo } from '@ssc/core/mutiltenancy';
 import {
   AccessTokenRpcClientService,
   AccountsRpcClientService,
@@ -9,9 +11,8 @@ import {
   RolesRpcClientService,
   TenantsRpcClientService,
   WebhooksRpcClientService,
-} from '@ultimatebackend/core/services';
-import { Context } from 'apollo-server-core/src/types';
-import { TenantInfo } from '@ultimatebackend/core/mutiltenancy';
+} from '@ssc/core/services';
+import { UserEntity } from '@ssc/repository';
 
 export interface IRequest extends ExpressRequest {
   tenantInfo?: TenantInfo;

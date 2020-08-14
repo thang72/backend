@@ -1,13 +1,14 @@
 import { Module } from '@nestjs/common';
-import { TenantRepository } from '@ultimatebackend/repository';
-import { CookieSerializer } from '@ultimatebackend/common';
-import { MemberCommandHandlers, MemberQueryHandlers } from './cqrs';
+import { JwtModule } from '@nestjs/jwt';
+import { CookieSerializer } from '@ssc/common';
 import {
   JwtConfigService,
   MemberEventHandlers,
   RolesRpcClientService,
-} from '@ultimatebackend/core';
-import { JwtModule } from '@nestjs/jwt';
+} from '@ssc/core';
+import { TenantRepository } from '@ssc/repository';
+
+import { MemberCommandHandlers, MemberQueryHandlers } from './cqrs';
 import { MembersController } from './members.controller';
 
 @Module({

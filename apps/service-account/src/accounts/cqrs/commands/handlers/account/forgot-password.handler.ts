@@ -1,11 +1,12 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { UserEntity, UserRepository } from '@ultimatebackend/repository';
-import { ForgotPasswordSentEvent } from '@ultimatebackend/core';
-import { ForgotPasswordCommand } from '../../impl';
-import { ForgotPasswordResponse } from '@ultimatebackend/proto-schema/account';
-import { RpcException } from '@nestjs/microservices';
 import { JwtService } from '@nestjs/jwt';
+import { RpcException } from '@nestjs/microservices';
+import { ForgotPasswordSentEvent } from '@ssc/core';
+import { ForgotPasswordResponse } from '@ssc/proto-schema/account';
+import { UserEntity, UserRepository } from '@ssc/repository';
+
+import { ForgotPasswordCommand } from '../../impl';
 
 /**
  * @implements {ICommandHandler<ForgotPasswordCommand>}

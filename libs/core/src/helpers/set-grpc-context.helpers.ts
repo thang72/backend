@@ -1,7 +1,9 @@
 import { Metadata } from 'grpc';
+
+import { TenantInfo } from '@ssc/core/mutiltenancy';
+import { TenantEntity, UserEntity } from '@ssc/repository';
+
 import { GqlContext } from '../';
-import { TenantEntity, UserEntity } from '@ultimatebackend/repository';
-import { TenantInfo } from '@ultimatebackend/core/mutiltenancy';
 
 export function setRpcContext(ctx: GqlContext, inApp?: boolean): Metadata {
   const meta = new Metadata();

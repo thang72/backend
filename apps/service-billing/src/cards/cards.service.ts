@@ -1,6 +1,8 @@
-import { Injectable, Logger } from '@nestjs/common';
 import { InjectStripe } from 'nestjs-stripe';
 import * as Stripe from 'stripe';
+
+import { Injectable, Logger } from '@nestjs/common';
+import { RpcException } from '@nestjs/microservices';
 import {
   CreateCardRequest,
   CreateCardResponse,
@@ -11,9 +13,10 @@ import {
   ReadCardRequest,
   SetDefaultCardRequest,
   SetDefaultCardResponse,
-} from '@ultimatebackend/proto-schema/billing';
-import { RpcException } from '@nestjs/microservices';
+} from '@ssc/proto-schema/billing';
+
 import { cardSliceToProtoCardSlice, cardToProtoCard } from '../common';
+
 import ICardSourceCreationOptions = Stripe.cards.ICardSourceCreationOptions;
 
 @Injectable()

@@ -1,5 +1,5 @@
-import { Int, ArgsType, Field, InputType } from '@nestjs/graphql';
-import { PlanPriceInterval } from '@ultimatebackend/contracts';
+import { ArgsType, Field, InputType, Int } from '@nestjs/graphql';
+import { PlanPriceInterval } from '@ssc/contracts';
 
 @InputType()
 export class PaginationInput {

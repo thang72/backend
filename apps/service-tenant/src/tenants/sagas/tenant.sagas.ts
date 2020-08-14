@@ -1,9 +1,10 @@
-import { Injectable, Logger } from '@nestjs/common';
-import { ICommand, ofType, Saga } from '@nestjs/cqrs';
 import { Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
-import { TenantCreatedEvent } from '@ultimatebackend/core/cqrs';
-import { TenantRepository } from '@ultimatebackend/repository';
+
+import { Injectable, Logger } from '@nestjs/common';
+import { ICommand, Saga, ofType } from '@nestjs/cqrs';
+import { TenantCreatedEvent } from '@ssc/core/cqrs';
+import { TenantRepository } from '@ssc/repository';
 
 @Injectable()
 export class TenantSagas {

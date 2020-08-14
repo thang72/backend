@@ -1,3 +1,4 @@
+import { UseGuards } from '@nestjs/common';
 import {
   Args,
   Context,
@@ -6,15 +7,10 @@ import {
   ResolveField,
   Resolver,
 } from '@nestjs/graphql';
-import {
-  setRpcContext,
-  GqlContext,
-  Resource,
-  GqlAuthGuard,
-} from '@ultimatebackend/core';
+import { GqlAuthGuard, GqlContext, Resource, setRpcContext } from '@ssc/core';
+import { CreateCardRequest } from '@ssc/proto-schema/billing';
+
 import { Card, CardMutations, CreateCardInput } from './types';
-import { UseGuards } from '@nestjs/common';
-import { CreateCardRequest } from '@ultimatebackend/proto-schema/billing';
 
 @Resolver(() => Card)
 export class CardsResolver {

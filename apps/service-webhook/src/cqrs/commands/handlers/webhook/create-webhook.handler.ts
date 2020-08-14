@@ -1,14 +1,13 @@
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { AxiosRequestConfig, Method } from 'axios';
+
 import { HttpService, Logger } from '@nestjs/common';
-import { WebhookRepository } from '@ultimatebackend/repository';
-import { WebhookCreatedEvent } from '@ultimatebackend/core';
-import { CreateWebhookResponse } from '@ultimatebackend/proto-schema/webhook';
-import {
-  WebhookApiKeyFieldEnum,
-  WebhookAuthEnum,
-} from '@ultimatebackend/contracts';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { RpcException } from '@nestjs/microservices';
+import { WebhookApiKeyFieldEnum, WebhookAuthEnum } from '@ssc/contracts';
+import { WebhookCreatedEvent } from '@ssc/core';
+import { CreateWebhookResponse } from '@ssc/proto-schema/webhook';
+import { WebhookRepository } from '@ssc/repository';
+
 import { CreateWebhookCommand } from '../../';
 import { mapWebhookEntityToProto } from '../../../../utitlity';
 

@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
+import { PlanRepository } from '@ssc/repository';
+
 import { PlansService } from './plans.service';
-import { PlanRepository } from '@ultimatebackend/repository';
 
 @Module({
   providers: [PlansService, PlanRepository],

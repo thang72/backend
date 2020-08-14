@@ -1,6 +1,7 @@
-import { ICommand } from '@nestjs/cqrs';
 import { ObjectId } from 'mongodb';
-import * as Account from '@ultimatebackend/proto-schema/account';
+
+import { ICommand } from '@nestjs/cqrs';
+import * as Account from '@ssc/proto-schema/account';
 
 export class UpdateUserCommand implements ICommand {
   constructor(

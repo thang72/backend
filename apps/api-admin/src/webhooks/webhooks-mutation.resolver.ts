@@ -1,4 +1,13 @@
+import { UseGuards } from '@nestjs/common';
 import { Args, Context, ResolveField, Resolver } from '@nestjs/graphql';
+import { WebhookAuthEnum } from '@ssc/contracts';
+import { GqlAuthGuard, GqlContext, Resource, setRpcContext } from '@ssc/core';
+import {
+  CreateWebhookRequest,
+  UpdateWebhookRequest,
+  Webhook as RpcWebhook,
+} from '@ssc/proto-schema/webhook';
+
 import {
   CreateWebhookInput,
   DeleteWebhookInput,
@@ -6,19 +15,6 @@ import {
   Webhook,
   WebhookMutations,
 } from './types';
-import {
-  GqlAuthGuard,
-  GqlContext,
-  Resource,
-  setRpcContext,
-} from '@ultimatebackend/core';
-import { UseGuards } from '@nestjs/common';
-import {
-  Webhook as RpcWebhook,
-  CreateWebhookRequest,
-  UpdateWebhookRequest,
-} from '@ultimatebackend/proto-schema/webhook';
-import { WebhookAuthEnum } from '@ultimatebackend/contracts';
 
 @Resolver(() => WebhookMutations)
 export class WebhooksMutationResolver {

@@ -1,14 +1,12 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { ProjectRepository } from '@ultimatebackend/repository';
-import { ProjectUpdatedEvent } from '@ultimatebackend/core';
-import { cleanEmptyProperties } from '@ultimatebackend/common';
-import { UpdateProjectCommand } from '../../impl';
 import { RpcException } from '@nestjs/microservices';
-import {
-  Project,
-  UpdateProjectResponse,
-} from '@ultimatebackend/proto-schema/project';
+import { cleanEmptyProperties } from '@ssc/common';
+import { ProjectUpdatedEvent } from '@ssc/core';
+import { Project, UpdateProjectResponse } from '@ssc/proto-schema/project';
+import { ProjectRepository } from '@ssc/repository';
+
+import { UpdateProjectCommand } from '../../impl';
 
 @CommandHandler(UpdateProjectCommand)
 export class UpdateProjectHandler

@@ -1,5 +1,5 @@
 import { Directive, Field, ObjectType } from '@nestjs/graphql';
-import { Node } from '@ultimatebackend/contracts';
+import { Node } from '@ssc/contracts';
 
 @ObjectType()
 export class EmailObject {

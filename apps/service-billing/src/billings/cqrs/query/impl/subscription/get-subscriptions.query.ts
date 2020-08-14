@@ -1,5 +1,5 @@
 import { IQuery } from '@nestjs/cqrs';
-import { FindSubscriptionsRequest } from '@ultimatebackend/proto-schema/billing';
+import { FindSubscriptionsRequest } from '@ssc/proto-schema/billing';
 
 export class GetSubscriptionsQuery implements IQuery {
   constructor(

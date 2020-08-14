@@ -1,5 +1,6 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
-import { NotImplementedError } from '@ultimatebackend/common';
+import { NotImplementedError } from '@ssc/common';
+
 import { Role } from './types';
 
 @Resolver(Role)

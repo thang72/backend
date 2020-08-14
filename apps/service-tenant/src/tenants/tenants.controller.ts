@@ -1,6 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
 import { GrpcMethod } from '@nestjs/microservices';
+import { getIdentityFromCtx } from '@ssc/core';
 import {
   CreateTenantRequest,
   CreateTenantResponse,
@@ -14,7 +15,8 @@ import {
   TenantAvailableResponse,
   UpdateTenantRequest,
   UpdateTenantResponse,
-} from '@ultimatebackend/proto-schema/tenant';
+} from '@ssc/proto-schema/tenant';
+
 import {
   CreateTenantCommand,
   GetTenantQuery,
@@ -23,7 +25,6 @@ import {
   TenantAvailableQuery,
   UpdateTenantCommand,
 } from './cqrs';
-import { getIdentityFromCtx } from '@ultimatebackend/core';
 
 @Controller('tenants')
 export class TenantsController {

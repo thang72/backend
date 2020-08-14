@@ -1,5 +1,5 @@
 import { ICommand } from '@nestjs/cqrs';
-import { CreateSubscriptionRequest } from '@ultimatebackend/proto-schema/billing';
+import { CreateSubscriptionRequest } from '@ssc/proto-schema/billing';
 
 export class CreateSubscriptionCommand implements ICommand {
   constructor(

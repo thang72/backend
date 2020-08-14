@@ -1,5 +1,5 @@
 import { Field, ID, Int, ObjectType } from '@nestjs/graphql';
-import { Address } from '@ultimatebackend/contracts';
+import { Address } from '@ssc/contracts';
 
 @ObjectType()
 export class Card {

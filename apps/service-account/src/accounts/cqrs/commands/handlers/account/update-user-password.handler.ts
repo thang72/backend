@@ -1,15 +1,16 @@
 import { Logger } from '@nestjs/common';
-import { CommandHandler, ICommandHandler, EventBus } from '@nestjs/cqrs';
-import { UserEntity, UserRepository } from '@ultimatebackend/repository';
-import { UserPasswordUpdatedEvent } from '@ultimatebackend/core';
-import { UpdatePasswordResponse } from '@ultimatebackend/proto-schema/account';
-import { RpcException } from '@nestjs/microservices';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { JwtService } from '@nestjs/jwt';
+import { RpcException } from '@nestjs/microservices';
 import {
-  generateHashedPassword,
   ValidationError,
+  generateHashedPassword,
   validPassword,
-} from '@ultimatebackend/common';
+} from '@ssc/common';
+import { UserPasswordUpdatedEvent } from '@ssc/core';
+import { UpdatePasswordResponse } from '@ssc/proto-schema/account';
+import { UserEntity, UserRepository } from '@ssc/repository';
+
 import { UpdateUserPasswordCommand } from '../../impl';
 
 /**

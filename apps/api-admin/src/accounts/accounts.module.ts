@@ -1,19 +1,21 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
-import { CookieSerializer } from '@ultimatebackend/common';
-import { PassportModule } from '@nestjs/passport';
 import { Response } from 'express';
+import * as passport from 'passport';
+
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { PassportModule } from '@nestjs/passport';
+import { CookieSerializer } from '@ssc/common';
+import { AccountsRpcClientService } from '@ssc/core';
+
+import { AccountsMutationResolver } from './accounts-mutation.resolver';
+import { AccountsController } from './accounts.controller';
 import { AccountsResolver } from './accounts.resolver';
 import { AccountsService } from './accounts.service';
-import { AccountsController } from './accounts.controller';
 import {
   FacebookStrategy,
   GithubStrategy,
   GoogleStrategy,
   LocalStrategy,
 } from './strategy';
-import * as passport from 'passport';
-import { AccountsMutationResolver } from './accounts-mutation.resolver';
-import { AccountsRpcClientService } from '@ultimatebackend/core';
 
 @Module({
   imports: [
@@ -52,7 +54,7 @@ export class AccountsModule implements NestModule {
         },
         passport.authenticate('facebook', facebookLoginOptions),
         (req, res: Response) => {
-          res.redirect('https://ultimatebackend.io');
+          res.redirect('https://sunshine.io');
         },
       )
       .forRoutes('account/facebook/callback');
@@ -68,7 +70,7 @@ export class AccountsModule implements NestModule {
         },
         passport.authenticate('google', facebookLoginOptions),
         (req, res: Response) => {
-          res.redirect('https://ultimatebackend.io');
+          res.redirect('https://sunshine.io');
         },
       )
       .forRoutes('account/google/callback');
@@ -84,7 +86,7 @@ export class AccountsModule implements NestModule {
         },
         passport.authenticate('github', facebookLoginOptions),
         (req, res: Response) => {
-          res.redirect('https://ultimatebackend.io');
+          res.redirect('https://sunshine.io');
         },
       )
       .forRoutes('account/github/callback');

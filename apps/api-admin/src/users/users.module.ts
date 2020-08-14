@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
-import { UsersResolver } from './users.resolver';
+import { AccountsRpcClientService } from '@ssc/core';
+
 import { UsersMutationResolver } from './users-mutation.resolver';
-import { AccountsRpcClientService } from '@ultimatebackend/core';
+import { UsersResolver } from './users.resolver';
 
 @Module({
   providers: [AccountsRpcClientService, UsersResolver, UsersMutationResolver],

@@ -1,17 +1,12 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { TenantRepository } from '@ultimatebackend/repository';
-import {
-  BillingsRpcClientService,
-  TenantUpdatedEvent,
-} from '@ultimatebackend/core';
-import { cleanEmptyProperties } from '@ultimatebackend/common';
-import { UpdateTenantCommand } from '../../impl';
 import { RpcException } from '@nestjs/microservices';
-import {
-  Tenant,
-  UpdateTenantResponse,
-} from '@ultimatebackend/proto-schema/tenant';
+import { cleanEmptyProperties } from '@ssc/common';
+import { BillingsRpcClientService, TenantUpdatedEvent } from '@ssc/core';
+import { Tenant, UpdateTenantResponse } from '@ssc/proto-schema/tenant';
+import { TenantRepository } from '@ssc/repository';
+
+import { UpdateTenantCommand } from '../../impl';
 
 /**
  * @class

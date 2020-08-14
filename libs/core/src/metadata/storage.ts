@@ -1,9 +1,10 @@
-import { IPermission, IResource } from '../';
 import {
   ClassType,
   DecoratorTypeOptions,
   ensureReflectMetadataExists,
-} from '@ultimatebackend/common';
+} from '@ssc/common';
+
+import { IPermission, IResource } from '../';
 
 export class MetadataStorage {
   fields: FilterableMetadata[] = [];

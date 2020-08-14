@@ -1,21 +1,23 @@
-import { NestFactory } from '@nestjs/core';
-import { Logger } from '@nestjs/common';
 import * as getPort from 'get-port';
+
 import { NestCloud } from '@nestcloud/core';
-import { SERVICE_NAME } from './constants';
-import { AppModule } from './app.module';
+import { Logger } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { SwaggerModule } from '@nestjs/swagger';
 import {
   AppUtils,
   authSetup,
   bloodTearsMiddleware,
   corsOptions,
   setupSwagger,
-} from '@ultimatebackend/common';
-import { SwaggerModule } from '@nestjs/swagger';
+} from '@ssc/common';
 import {
-  enableMultiTenancy,
   TenantDatabaseStrategy,
-} from '@ultimatebackend/core/mutiltenancy';
+  enableMultiTenancy,
+} from '@ssc/core/mutiltenancy';
+
+import { AppModule } from './app.module';
+import { SERVICE_NAME } from './constants';
 
 async function bootstrap() {
   const app = NestCloud.create(await NestFactory.create(AppModule));

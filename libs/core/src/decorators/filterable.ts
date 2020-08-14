@@ -1,7 +1,8 @@
-import { findType } from '../metadata/find-type';
-import { getMetadataStorage } from '../metadata';
 import { ReturnTypeFunc } from '@nestjs/graphql';
-import { ClassType } from '@ultimatebackend/common';
+import { ClassType } from '@ssc/common';
+
+import { getMetadataStorage } from '../metadata';
+import { findType } from '../metadata/find-type';
 
 // tslint:disable-next-line:ban-types
 export function Filterable(

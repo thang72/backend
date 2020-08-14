@@ -1,6 +1,6 @@
 import { ICommand } from '@nestjs/cqrs';
-import { UserEntity } from '@ultimatebackend/repository';
-import { InviteMemberRequest } from '@ultimatebackend/proto-schema/tenant';
+import { InviteMemberRequest } from '@ssc/proto-schema/tenant';
+import { UserEntity } from '@ssc/repository';
 
 export class InviteMemberCommand implements ICommand {
   constructor(

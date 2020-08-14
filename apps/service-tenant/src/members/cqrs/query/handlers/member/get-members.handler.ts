@@ -1,12 +1,10 @@
 import { Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { TenantRepository } from '@ultimatebackend/repository';
+import { BadRequestRpcException } from '@ssc/common';
+import { FindMemberResponse, Member } from '@ssc/proto-schema/tenant';
+import { TenantRepository } from '@ssc/repository';
+
 import { GetMembersQuery } from '../../impl';
-import {
-  FindMemberResponse,
-  Member,
-} from '@ultimatebackend/proto-schema/tenant';
-import { BadRequestRpcException } from '@ultimatebackend/common';
 
 @QueryHandler(GetMembersQuery)
 export class GetMembersHandler implements IQueryHandler<GetMembersQuery> {

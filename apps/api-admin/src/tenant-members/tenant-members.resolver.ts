@@ -1,3 +1,4 @@
+import { UseGuards, UseInterceptors } from '@nestjs/common';
 import {
   Args,
   Context,
@@ -7,16 +8,16 @@ import {
   ResolveField,
   Resolver,
 } from '@nestjs/graphql';
-import { CurrentTenant } from '@ultimatebackend/common';
-import { TenantEntity, TenantMemberEmbed } from '@ultimatebackend/repository';
-import { UseGuards, UseInterceptors } from '@nestjs/common';
+import { CurrentTenant } from '@ssc/common';
 import {
   GqlAuthGuard,
   GqlContext,
   Permission,
   PermissionsInterceptor,
   setRpcContext,
-} from '@ultimatebackend/core';
+} from '@ssc/core';
+import { TenantEntity, TenantMemberEmbed } from '@ssc/repository';
+
 import { Member, MemberFilterArgs, MemberMutations } from './types';
 
 @UseGuards(GqlAuthGuard)

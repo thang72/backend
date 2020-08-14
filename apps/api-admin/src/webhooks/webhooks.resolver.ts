@@ -1,8 +1,8 @@
 import { Args, Context, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { Webhook, WebhookMutations } from './types';
-import { GqlContext, setRpcContext } from '@ultimatebackend/core';
-import { WebhookFilterArgs } from './types';
-import { Webhook as RpcWebhook } from '@ultimatebackend/proto-schema/webhook';
+import { GqlContext, setRpcContext } from '@ssc/core';
+import { Webhook as RpcWebhook } from '@ssc/proto-schema/webhook';
+
+import { Webhook, WebhookFilterArgs, WebhookMutations } from './types';
 
 @Resolver(() => Webhook)
 export class WebhooksResolver {

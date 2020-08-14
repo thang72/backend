@@ -1,16 +1,18 @@
-import { MongoModuleOptions, MongoOptionsFactory } from '@juicycleff/repo-orm';
-import { Inject, Injectable, Scope } from '@nestjs/common';
-import { REQUEST } from '@nestjs/core';
 import { Request } from 'express';
-import { CONTEXT } from '@nestjs/graphql';
-import { ConsulDatabaseConfig } from '@ultimatebackend/common';
+import { Metadata } from 'grpc';
+
+import { MongoModuleOptions, MongoOptionsFactory } from '@juicycleff/repo-orm';
 import { InjectConfig } from '@nestcloud/config';
 import { EtcdConfig } from '@nestcloud/config/etcd-config';
-import { Metadata } from 'grpc';
-import { RequestContextHost } from '@nestjs/microservices/context/request-context-host';
-import { TenantDatabaseStrategy, TenantInfo } from '../';
+import { Inject, Injectable, Scope } from '@nestjs/common';
+import { REQUEST } from '@nestjs/core';
+import { CONTEXT } from '@nestjs/graphql';
 import { RpcException } from '@nestjs/microservices';
-import { TenantEntity } from '@ultimatebackend/repository';
+import { RequestContextHost } from '@nestjs/microservices/context/request-context-host';
+import { ConsulDatabaseConfig } from '@ssc/common';
+import { TenantEntity } from '@ssc/repository';
+
+import { TenantDatabaseStrategy, TenantInfo } from '../';
 
 @Injectable({ scope: Scope.REQUEST })
 export class MongoMultiTenantConfigService implements MongoOptionsFactory {

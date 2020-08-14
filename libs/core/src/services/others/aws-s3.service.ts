@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
+
 // import * as AWS from 'aws-sdk';
 // import * as mime from 'mime-types';
 // import { ConfigService } from '../configs/config.service';
 // import { GeneratorService } from './generator.service';
-// import { IFile } from '@ultimatebackend/common/interfaces';
+// import { IFile } from '@ssc/common/interfaces';
 
 @Injectable()
 export class AwsS3Service {

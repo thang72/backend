@@ -1,10 +1,12 @@
+import { InjectStripe } from 'nestjs-stripe';
+import * as Stripe from 'stripe';
+
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { Customer, StripeUserUpdatedEvent } from '@ultimatebackend/core';
-import { UpdateStripeCustomerCommand } from '../../impl';
-import * as Stripe from 'stripe';
-import { InjectStripe } from 'nestjs-stripe';
 import { RpcException } from '@nestjs/microservices';
+import { Customer, StripeUserUpdatedEvent } from '@ssc/core';
+
+import { UpdateStripeCustomerCommand } from '../../impl';
 
 @CommandHandler(UpdateStripeCustomerCommand)
 export class UpdateStripeCustomerHandler

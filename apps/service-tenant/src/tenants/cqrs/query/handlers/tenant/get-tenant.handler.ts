@@ -1,14 +1,13 @@
+import { ObjectId } from 'mongodb';
+
+import { mongoParser } from '@juicycleff/repo-orm';
 import { Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { TenantRepository } from '@ultimatebackend/repository/repositories';
-import { ObjectId } from 'mongodb';
-import { GetTenantQuery } from '../../impl';
-import { mongoParser } from '@juicycleff/repo-orm';
 import { RpcException } from '@nestjs/microservices';
-import {
-  ReadTenantResponse,
-  Tenant,
-} from '@ultimatebackend/proto-schema/tenant';
+import { ReadTenantResponse, Tenant } from '@ssc/proto-schema/tenant';
+import { TenantRepository } from '@ssc/repository/repositories';
+
+import { GetTenantQuery } from '../../impl';
 
 @QueryHandler(GetTenantQuery)
 export class GetTenantHandler implements IQueryHandler<GetTenantQuery> {

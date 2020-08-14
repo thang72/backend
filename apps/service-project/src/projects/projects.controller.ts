@@ -1,6 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
-import { ProjectRepository } from '@ultimatebackend/repository';
+import { GrpcMethod } from '@nestjs/microservices';
+import { getIdentityFromCtx } from '@ssc/core';
 import {
   CreateProjectRequest,
   CreateProjectResponse,
@@ -8,21 +9,21 @@ import {
   DeleteProjectResponse,
   FindProjectsRequest,
   FindProjectsResponse,
+  ProjectService,
   ReadProjectRequest,
   ReadProjectResponse,
-  ProjectService,
   UpdateProjectRequest,
   UpdateProjectResponse,
-} from '@ultimatebackend/proto-schema/project';
-import { GrpcMethod } from '@nestjs/microservices';
+} from '@ssc/proto-schema/project';
+import { ProjectRepository } from '@ssc/repository';
+
 import {
   CreateProjectCommand,
   DeleteProjectCommand,
-  UpdateProjectCommand,
   GetProjectQuery,
   GetProjectsQuery,
+  UpdateProjectCommand,
 } from './cqrs';
-import { getIdentityFromCtx } from '@ultimatebackend/core';
 
 @Controller('projects')
 export class ProjectsController implements ProjectService<any> {

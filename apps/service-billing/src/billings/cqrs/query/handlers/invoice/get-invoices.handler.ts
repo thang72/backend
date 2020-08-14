@@ -1,15 +1,14 @@
+import { InjectStripe } from 'nestjs-stripe';
+import * as Stripe from 'stripe';
+
 import { CACHE_MANAGER, CacheStore, Inject, Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import * as Stripe from 'stripe';
-import { InjectStripe } from 'nestjs-stripe';
-import { GetInvoicesQuery } from '../../impl';
-import { BadRequestError } from '@ultimatebackend/common';
-import {
-  FindInvoicesResponse,
-  Invoice,
-} from '@ultimatebackend/proto-schema/billing';
-import { invoiceSliceToProtoInvoiceSlice } from '../../../../../common';
 import { RpcException } from '@nestjs/microservices';
+import { BadRequestError } from '@ssc/common';
+import { FindInvoicesResponse, Invoice } from '@ssc/proto-schema/billing';
+
+import { invoiceSliceToProtoInvoiceSlice } from '../../../../../common';
+import { GetInvoicesQuery } from '../../impl';
 
 @QueryHandler(GetInvoicesQuery)
 export class GetInvoicesHandler implements IQueryHandler<GetInvoicesQuery> {

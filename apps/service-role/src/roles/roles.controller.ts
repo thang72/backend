@@ -1,5 +1,8 @@
+import { NestCasbinService } from 'nestjs-casbin';
+
 import { Controller, Logger } from '@nestjs/common';
 import { GrpcMethod, RpcException } from '@nestjs/microservices';
+import { BadRequestError } from '@ssc/common';
 import {
   AddPolicyRequest,
   AddPolicyResponse,
@@ -18,9 +21,7 @@ import {
   RemoveUserFromRoleRequest,
   RemoveUserFromRoleResponse,
   RoleService,
-} from '@ultimatebackend/proto-schema/role';
-import { NestCasbinService } from 'nestjs-casbin';
-import { BadRequestError } from '@ultimatebackend/common';
+} from '@ssc/proto-schema/role';
 
 @Controller()
 export class RolesController implements RoleService<any> {

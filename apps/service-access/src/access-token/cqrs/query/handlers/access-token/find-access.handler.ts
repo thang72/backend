@@ -1,11 +1,13 @@
+import { NestCasbinService } from 'nestjs-casbin';
+
 import { CACHE_MANAGER, CacheStore, Inject, Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { FindAccessResponse } from '@ultimatebackend/proto-schema/access';
-import { NestCasbinService } from 'nestjs-casbin';
 import { RpcException } from '@nestjs/microservices';
-import { FindAccessQuery } from '../../impl';
-import { AccessTokenRepository } from '@ultimatebackend/repository';
+import { FindAccessResponse } from '@ssc/proto-schema/access';
+import { AccessTokenRepository } from '@ssc/repository';
+
 import { mapAccessEntityArrToProto } from '../../../../utitlity';
+import { FindAccessQuery } from '../../impl';
 
 @QueryHandler(FindAccessQuery)
 export class FindAccessHandler implements IQueryHandler<FindAccessQuery> {

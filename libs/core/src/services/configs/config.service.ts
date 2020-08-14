@@ -1,5 +1,6 @@
 import * as dotenv from 'dotenv';
-import { IAwsConfigInterface } from '@ultimatebackend/common/interfaces';
+
+import { IAwsConfigInterface } from '@ssc/common/interfaces';
 
 export class ConfigService {
   constructor() {

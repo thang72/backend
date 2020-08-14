@@ -1,15 +1,15 @@
 import { ArgsType, Field, InputType } from '@nestjs/graphql';
+import { ClassType } from '@ssc/common';
+import { PaginationInput } from '@ssc/contracts';
 import {
   BooleanComparisonFilter,
-  NumberComparisonFilter,
-  StringComparisonFilter,
   DateComparisonFilter,
   EnumComparisonFilter,
-} from '@ultimatebackend/contracts/types';
-import { getMetadataStorage } from '@ultimatebackend/core/metadata';
-import { InstanceCollector } from '@ultimatebackend/core/decorators/instance-collector.decorator';
-import { PaginationInput } from '@ultimatebackend/contracts';
-import { ClassType } from '@ultimatebackend/common';
+  NumberComparisonFilter,
+  StringComparisonFilter,
+} from '@ssc/contracts/types';
+import { InstanceCollector } from '@ssc/core/decorators/instance-collector.decorator';
+import { getMetadataStorage } from '@ssc/core/metadata';
 
 interface FilterMongoOption {
   simple?: boolean;

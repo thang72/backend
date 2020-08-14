@@ -1,19 +1,15 @@
+import { UseGuards } from '@nestjs/common';
 import { Args, Context, ResolveField, Resolver } from '@nestjs/graphql';
+import { GqlAuthGuard, GqlContext, Resource, setRpcContext } from '@ssc/core';
+import { Member as RpcMember } from '@ssc/proto-schema/tenant';
+
 import {
-  InviteMemberInput,
-  MemberMutations,
   DeleteMemberInput,
+  InviteMemberInput,
   Member,
+  MemberMutations,
   UpdateMemberInput,
 } from './types';
-import {
-  GqlAuthGuard,
-  GqlContext,
-  Resource,
-  setRpcContext,
-} from '@ultimatebackend/core';
-import { UseGuards } from '@nestjs/common';
-import { Member as RpcMember } from '@ultimatebackend/proto-schema/tenant';
 
 @Resolver(() => MemberMutations)
 export class TenantMembersMutationResolver {

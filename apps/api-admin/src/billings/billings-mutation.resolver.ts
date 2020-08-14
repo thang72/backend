@@ -1,16 +1,17 @@
-import { Args, Context, ResolveField, Resolver } from '@nestjs/graphql';
-import {
-  BillingMutations,
-  ChangeSubscriptionInput,
-  TenantSubscription,
-} from './types';
 import { UseGuards } from '@nestjs/common';
+import { Args, Context, ResolveField, Resolver } from '@nestjs/graphql';
 import {
   CurrentIdentity,
   GqlAuthGuard,
   Resource,
   setRpcContext,
-} from '@ultimatebackend/core';
+} from '@ssc/core';
+
+import {
+  BillingMutations,
+  ChangeSubscriptionInput,
+  TenantSubscription,
+} from './types';
 
 @Resolver(() => BillingMutations)
 export class BillingsMutationResolver {

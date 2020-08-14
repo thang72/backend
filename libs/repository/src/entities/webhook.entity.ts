@@ -1,9 +1,7 @@
 import { Entity } from '@juicycleff/repo-orm';
+import { WebhookCrudEnum, WebhookHttpVerbEnum } from '@ssc/contracts';
+
 import { BaseEntity } from './base-entity';
-import {
-  WebhookCrudEnum,
-  WebhookHttpVerbEnum,
-} from '@ultimatebackend/contracts';
 
 export type AuthTypeEntity =
   | {

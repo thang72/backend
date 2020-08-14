@@ -1,11 +1,12 @@
 import { Logger } from '@nestjs/common';
-import { CommandHandler, ICommandHandler, EventBus } from '@nestjs/cqrs';
-import { UserRepository } from '@ultimatebackend/repository';
-import { UserCreatedEvent } from '@ultimatebackend/core';
-import { cleanEmptyProperties } from '@ultimatebackend/common';
-import { UpdateUserCommand } from '../../impl';
-import * as Account from '@ultimatebackend/proto-schema/account';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { RpcException } from '@nestjs/microservices';
+import { cleanEmptyProperties } from '@ssc/common';
+import { UserCreatedEvent } from '@ssc/core';
+import * as Account from '@ssc/proto-schema/account';
+import { UserRepository } from '@ssc/repository';
+
+import { UpdateUserCommand } from '../../impl';
 
 /**
  * @implements {ICommandHandler<UpdateUserCommand>}

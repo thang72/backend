@@ -1,19 +1,21 @@
+import { Job } from 'bull';
+
 import {
-  Processor,
-  Process,
   OnQueueActive,
   OnQueueCompleted,
+  Process,
+  Processor,
 } from '@nestjs/bull';
-import { Job } from 'bull';
 import { Logger } from '@nestjs/common';
-import { TenantMemberEmbed, UserEntity } from '@ultimatebackend/repository';
-import { EmailService } from '../email.service';
-import { SkeletonsEncrypt } from '@ultimatebackend/common/utils';
+import { SkeletonsEncrypt } from '@ssc/common/utils';
+import { TenantMemberEmbed, UserEntity } from '@ssc/repository';
+
 import {
   DASHBOARD_APP_LINK,
   QUEUE_PROCESS_IDS,
   SENDGRID_TEMPLATE_IDS,
 } from '../email.constants';
+import { EmailService } from '../email.service';
 import {
   SendGridActivation,
   SendGridInvitation,

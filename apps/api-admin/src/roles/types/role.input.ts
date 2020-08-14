@@ -1,5 +1,5 @@
 import { ArgsType, Field, ID, InputType } from '@nestjs/graphql';
-import { RoleActions } from '@ultimatebackend/contracts/enums/roles.enum';
+import { RoleActions } from '@ssc/contracts/enums/roles.enum';
 
 @InputType()
 export class CreateRoleInput {

@@ -1,5 +1,7 @@
 import { Controller, Logger } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
+import { GrpcMethod } from '@nestjs/microservices';
+import { getIdentityFromCtx } from '@ssc/core';
 import {
   CreateWebhookRequest,
   CreateWebhookResponse,
@@ -12,17 +14,16 @@ import {
   UpdateWebhookRequest,
   UpdateWebhookResponse,
   WebhookService,
-} from '@ultimatebackend/proto-schema/webhook';
-import { WebhookRepository } from '@ultimatebackend/repository';
-import { getIdentityFromCtx } from '@ultimatebackend/core';
+} from '@ssc/proto-schema/webhook';
+import { WebhookRepository } from '@ssc/repository';
+
 import {
   CreateWebhookCommand,
   DeleteWebhookCommand,
-  UpdateWebhookCommand,
   FindWebhookQuery,
   ReadWebhookQuery,
+  UpdateWebhookCommand,
 } from '../cqrs';
-import { GrpcMethod } from '@nestjs/microservices';
 
 @Controller('webhook')
 export class WebhookController implements WebhookService<any> {

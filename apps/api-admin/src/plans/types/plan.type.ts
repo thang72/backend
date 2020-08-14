@@ -1,5 +1,5 @@
 import { Directive, Field, ObjectType } from '@nestjs/graphql';
-import { Feature, Node, Price } from '@ultimatebackend/contracts';
+import { Feature, Node, Price } from '@ssc/contracts';
 
 @Directive(`@key(fields: "id")`)
 @ObjectType()

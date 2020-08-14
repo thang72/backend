@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common';
-import { UserRepository } from '@ultimatebackend/repository';
 import {
-  EventStoreSubscriptionType,
   EventStoreModule,
+  EventStoreSubscriptionType,
 } from '@juicycleff/nestjs-event-store';
+import { Module } from '@nestjs/common';
+import { JwtModule } from '@nestjs/jwt';
 import {
   AccountEventHandlers,
   BillingEventHandlers,
@@ -14,11 +14,12 @@ import {
   StripeUserCreatedEvent,
   UserLoggedInEvent,
   UserRegisteredEvent,
-} from '@ultimatebackend/core';
+} from '@ssc/core';
+import { UserRepository } from '@ssc/repository';
+
 import { AccountsController } from './accounts.controller';
-import { AccountSagas } from './sagas';
 import { AccountCommandHandlers, AccountQueryHandlers } from './cqrs';
-import { JwtModule } from '@nestjs/jwt';
+import { AccountSagas } from './sagas';
 
 @Module({
   imports: [

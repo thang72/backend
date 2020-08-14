@@ -1,14 +1,13 @@
+import { ObjectId } from 'mongodb';
+
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { ProjectRepository } from '@ultimatebackend/repository';
-import { ProjectCreatedEvent } from '@ultimatebackend/core';
-import { CreateProjectCommand } from '../../impl';
 import { RpcException } from '@nestjs/microservices';
-import {
-  CreateProjectResponse,
-  Project,
-} from '@ultimatebackend/proto-schema/project';
-import { ObjectId } from 'mongodb';
+import { ProjectCreatedEvent } from '@ssc/core';
+import { CreateProjectResponse, Project } from '@ssc/proto-schema/project';
+import { ProjectRepository } from '@ssc/repository';
+
+import { CreateProjectCommand } from '../../impl';
 
 @CommandHandler(CreateProjectCommand)
 export class CreateProjectHandler

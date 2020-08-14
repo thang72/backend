@@ -1,14 +1,15 @@
-import { Logger } from '@nestjs/common';
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { InjectStripe } from 'nestjs-stripe';
 import * as Stripe from 'stripe';
-import { cards } from 'stripe';
-import { SubscriptionCreatedEvent } from '@ultimatebackend/core';
-import { CreateSubscriptionCommand } from '../../impl';
-import { CreateSubscriptionResponse } from '@ultimatebackend/proto-schema/billing';
+
+import { Logger } from '@nestjs/common';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { RpcException } from '@nestjs/microservices';
+import { NotFoundRpcException } from '@ssc/common';
+import { SubscriptionCreatedEvent } from '@ssc/core';
+import { CreateSubscriptionResponse } from '@ssc/proto-schema/billing';
+
 import { subsToProtoStripeSubs } from '../../../../../common';
-import { NotFoundRpcException } from '@ultimatebackend/common';
+import { CreateSubscriptionCommand } from '../../impl';
 
 @CommandHandler(CreateSubscriptionCommand)
 export class CreateSubscriptionHandler

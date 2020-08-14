@@ -2,13 +2,13 @@ consul:
   host: ${{CONSUL_HOST}}
   port: 8500
 config:
-  key: ultimatebackend/config/${{ service.name }}
+  key: sunshine/config/${{ service.name }}
 nats:
   url: nats://${{NATS_HOST}}:4222
 redis:
   host: ${{REDIS_HOST}}
   port: 6379
-  password: ""
+  password: ''
 service:
   discoveryHost: ${{DISCOVERY_HOST}}
   healthCheck:
@@ -17,8 +17,8 @@ service:
     tcp: ${{ service.discoveryHost }}:${{ service.port }}
   maxRetry: 5
   retryInterval: 5000
-  tags: ["v1.0.0", "microservice"]
-  name: io.ultimatebackend.srv.account
+  tags: ['v1.0.0', 'microservice']
+  name: srv.account
   port: 50054
 loadbalance:
   ruleCls: RandomRule

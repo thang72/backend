@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+  - master
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -14,44 +14,43 @@ variables:
   CURRENT_BRANCH_NAME: $(Build.SourceBranch)
 
 steps:
-- task: Cache@2
-  inputs:
-    key: 'yarn | "$(Agent.OS)" | yarn.lock'
-    restoreKeys: |
-       yarn | "$(Agent.OS)"
-       yarn
-    path: $(YARN_CACHE_FOLDER)
-  displayName: Cache Yarn packages
+  - task: Cache@2
+    inputs:
+      key: 'yarn | "$(Agent.OS)" | yarn.lock'
+      restoreKeys: |
+        yarn | "$(Agent.OS)"
+        yarn
+      path: $(YARN_CACHE_FOLDER)
+    displayName: Cache Yarn packages
 
-- script: yarn --frozen-lockfile
+  - script: yarn --frozen-lockfile
 
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+    displayName: 'Install Node.js'
 
-- script: |
-    curl -o- -L https://yarnpkg.com/install.sh | bash
-    export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-  displayName: 'Install yarn'
+  - script: |
+      curl -o- -L https://yarnpkg.com/install.sh | bash
+      export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+    displayName: 'Install yarn'
 
-- script: |
-    apt-get update
-    apt-get install software-properties-common -y
-    apt-get update
-    apt-get install jq  -y
-    sudo ln -s bash /bin/sh.bash
-    sudo mv /bin/sh.bash /bin/sh
-    apt-get update
-    yarn global add npx
-    sh ./scripts/setup.sh
-    sudo ln -s dash /bin/sh.dash
-    sudo mv /bin/sh.dash /bin/sh
-  displayName: 'Build Micro-Services'
+  - script: |
+      apt-get update
+      apt-get install software-properties-common -y
+      apt-get update
+      apt-get install jq  -y
+      sudo ln -s bash /bin/sh.bash
+      sudo mv /bin/sh.bash /bin/sh
+      apt-get update
+      yarn global add npx
+      sh ./scripts/setup.sh
+      sudo ln -s dash /bin/sh.dash
+      sudo mv /bin/sh.dash /bin/sh
+    displayName: 'Build Micro-Services'
 
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'UltimateBackend'
-    publishLocation: 'pipeline'
-
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(Pipeline.Workspace)'
+      artifact: 'sunshine'
+      publishLocation: 'pipeline'

@@ -1,6 +1,6 @@
 import { ICommand } from '@nestjs/cqrs';
-import { UserEntity } from '@ultimatebackend/repository';
-import { UpdateMemberRequest } from '@ultimatebackend/proto-schema/tenant';
+import { UpdateMemberRequest } from '@ssc/proto-schema/tenant';
+import { UserEntity } from '@ssc/repository';
 
 export class UpdateMemberCommand implements ICommand {
   constructor(

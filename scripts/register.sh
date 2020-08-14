@@ -22,7 +22,7 @@ for PROJECT_DIR in "${PROJECTS[@]}" ; do
 
     echo "**** ${PROJECT_DIR}"
 
-  consul kv put ultimatebackend/config/${SVC_NAME} \@./${PROJECT_DIR}/${CONFIG_PATH}
+  consul kv put sunshine/config/${SVC_NAME} \@./${PROJECT_DIR}/${CONFIG_PATH}
 done
 
 echo "Service Registration system completed"

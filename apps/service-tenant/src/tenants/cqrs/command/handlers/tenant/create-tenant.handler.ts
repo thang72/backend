@@ -1,24 +1,20 @@
+import { DateTime } from 'luxon';
+import { ObjectID } from 'mongodb';
+
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import {
-  TenantMemberEmbed,
-  TenantRepository,
-} from '@ultimatebackend/repository';
+import { RpcException } from '@nestjs/microservices';
+import * as slugify from '@sindresorhus/slugify';
+import { AppRole, InvitationStatus } from '@ssc/contracts';
 import {
   BillingsRpcClientService,
   RolesRpcClientService,
   TenantCreatedEvent,
-} from '@ultimatebackend/core';
-import * as slugify from '@sindresorhus/slugify';
-import { ObjectID } from 'mongodb';
-import { DateTime } from 'luxon';
+} from '@ssc/core';
+import { CreateTenantResponse, Tenant } from '@ssc/proto-schema/tenant';
+import { TenantMemberEmbed, TenantRepository } from '@ssc/repository';
+
 import { CreateTenantCommand } from '../../impl';
-import { AppRole, InvitationStatus } from '@ultimatebackend/contracts';
-import { RpcException } from '@nestjs/microservices';
-import {
-  CreateTenantResponse,
-  Tenant,
-} from '@ultimatebackend/proto-schema/tenant';
 
 /**
  * @class

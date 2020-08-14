@@ -1,5 +1,5 @@
 import { IQuery } from '@nestjs/cqrs';
-import { ReadMemberRequest } from '@ultimatebackend/proto-schema/tenant';
+import { ReadMemberRequest } from '@ssc/proto-schema/tenant';
 
 export class GetMemberQuery implements IQuery {
   constructor(

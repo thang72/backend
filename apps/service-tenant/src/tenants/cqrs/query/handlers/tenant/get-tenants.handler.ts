@@ -1,14 +1,13 @@
+import { ApolloError } from 'apollo-server-express';
+import { ObjectId } from 'mongodb';
+
+import { mongoParser } from '@juicycleff/repo-orm';
 import { Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { ApolloError } from 'apollo-server-express';
-import { TenantRepository } from '@ultimatebackend/repository/repositories';
+import { FindTenantResponse, Tenant } from '@ssc/proto-schema/tenant';
+import { TenantRepository } from '@ssc/repository/repositories';
+
 import { GetTenantsQuery } from '../../impl';
-import { ObjectId } from 'mongodb';
-import { mongoParser } from '@juicycleff/repo-orm';
-import {
-  FindTenantResponse,
-  Tenant,
-} from '@ultimatebackend/proto-schema/tenant';
 
 @QueryHandler(GetTenantsQuery)
 export class GetTenantsHandler implements IQueryHandler<GetTenantsQuery> {

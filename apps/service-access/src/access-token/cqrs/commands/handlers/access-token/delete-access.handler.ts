@@ -1,11 +1,13 @@
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { Logger } from '@nestjs/common';
-import { AccessTokenRepository } from '@ultimatebackend/repository';
-import { RpcException } from '@nestjs/microservices';
-import { DeleteAccessResponse } from '@ultimatebackend/proto-schema/access';
-import { DeleteAccessCommand } from '../../';
 import { NestCasbinService } from 'nestjs-casbin';
-import { AccessTokenDeletedEvent } from '@ultimatebackend/core';
+
+import { Logger } from '@nestjs/common';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
+import { RpcException } from '@nestjs/microservices';
+import { AccessTokenDeletedEvent } from '@ssc/core';
+import { DeleteAccessResponse } from '@ssc/proto-schema/access';
+import { AccessTokenRepository } from '@ssc/repository';
+
+import { DeleteAccessCommand } from '../../';
 import { mapAccessTokenEntityToProto } from '../../../../utitlity';
 
 /**

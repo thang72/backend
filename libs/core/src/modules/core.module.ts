@@ -1,7 +1,8 @@
 import { Global, HttpModule, Module } from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
-import { ValidatorService, AppLogger } from '../services';
-import { CookieSerializer } from '@ultimatebackend/common';
+import { CookieSerializer } from '@ssc/common';
+
+import { AppLogger, ValidatorService } from '../services';
 
 const providers = [ValidatorService, AppLogger];
 

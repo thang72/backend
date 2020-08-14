@@ -1,14 +1,15 @@
-import { Module } from '@nestjs/common';
 import { MongoModule } from '@juicycleff/repo-orm';
+import { Module } from '@nestjs/common';
 import {
   CoreModule,
   MongoConfigService,
   ServiceRegistryModule,
-} from '@ultimatebackend/core';
+} from '@ssc/core';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TenantsModule } from './tenants/tenants.module';
 import { MembersModule } from './members/members.module';
+import { TenantsModule } from './tenants/tenants.module';
 
 @Module({
   imports: [

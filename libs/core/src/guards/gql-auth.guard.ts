@@ -1,15 +1,17 @@
+import { Metadata } from 'grpc';
+
 import {
   CanActivate,
   ExecutionContext,
   Injectable,
   Logger,
 } from '@nestjs/common';
-import { GqlExecutionContext } from '@nestjs/graphql';
 import { Reflector } from '@nestjs/core';
-import { GqlContext, IResource } from '../interfaces';
+import { GqlExecutionContext } from '@nestjs/graphql';
+import { UnauthorizedError } from '@ssc/common';
+
 import { RESOURCE_DEFINITION } from '../decorators';
-import { UnauthorizedError } from '@ultimatebackend/common';
-import { Metadata } from 'grpc';
+import { GqlContext, IResource } from '../interfaces';
 
 /**
  * Create new GqlAuthGuard

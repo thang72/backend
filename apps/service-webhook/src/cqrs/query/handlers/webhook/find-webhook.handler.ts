@@ -1,10 +1,11 @@
 import { CACHE_MANAGER, CacheStore, Inject, Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { FindWebhookResponse } from '@ultimatebackend/proto-schema/webhook';
 import { RpcException } from '@nestjs/microservices';
-import { FindWebhookQuery } from '../../impl';
-import { WebhookRepository } from '@ultimatebackend/repository';
+import { FindWebhookResponse } from '@ssc/proto-schema/webhook';
+import { WebhookRepository } from '@ssc/repository';
+
 import { mapWebhookEntityArrToProto } from '../../../../utitlity';
+import { FindWebhookQuery } from '../../impl';
 
 @QueryHandler(FindWebhookQuery)
 export class FindWebhookHandler implements IQueryHandler<FindWebhookQuery> {

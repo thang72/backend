@@ -1,6 +1,7 @@
-import { Address } from '@ultimatebackend/contracts';
-import { AggregateRoot } from '@nestjs/cqrs';
 import { Type } from 'class-transformer';
+
+import { AggregateRoot } from '@nestjs/cqrs';
+import { Address } from '@ssc/contracts';
 
 export class CardEntity extends AggregateRoot {
   id: string;

@@ -1,14 +1,13 @@
-import { Logger, CACHE_MANAGER, Inject, CacheStore } from '@nestjs/common';
-import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { InjectStripe } from 'nestjs-stripe';
 import * as Stripe from 'stripe';
-import {
-  Invoice,
-  ReadInvoiceResponse,
-} from '@ultimatebackend/proto-schema/billing';
+
+import { CACHE_MANAGER, CacheStore, Inject, Logger } from '@nestjs/common';
+import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { RpcException } from '@nestjs/microservices';
-import { GetInvoiceQuery } from '../../impl';
+import { Invoice, ReadInvoiceResponse } from '@ssc/proto-schema/billing';
+
 import { invoiceToProtoInvoice } from '../../../../../common';
+import { GetInvoiceQuery } from '../../impl';
 
 @QueryHandler(GetInvoiceQuery)
 export class GetInvoiceHandler implements IQueryHandler<GetInvoiceQuery> {

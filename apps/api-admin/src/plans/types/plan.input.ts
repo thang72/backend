@@ -1,5 +1,5 @@
 import { ArgsType, Field, ID, InputType } from '@nestjs/graphql';
-import { FeatureInput, PriceInput } from '@ultimatebackend/contracts';
+import { FeatureInput, PriceInput } from '@ssc/contracts';
 
 @InputType()
 export class CreateUpdatePlanInput {

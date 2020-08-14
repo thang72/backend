@@ -5,7 +5,7 @@ account:
 
 sendgrid:
   apiKey: "SG.*****************************************************"
-  sender: "ultimatebackend <no-reply@ultimatebackend.io>"
+  sender: "sunshine <no-reply@ssc.io>"
 
 database:
   mongodb:

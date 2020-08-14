@@ -1,7 +1,8 @@
-import { InputType, ArgsType, Field, ID } from '@nestjs/graphql';
-import { FilterMongo, PaginationInput } from '@ultimatebackend/contracts';
-import { AccessToken } from './access-token.type';
+import { ArgsType, Field, ID, InputType } from '@nestjs/graphql';
+import { FilterMongo, PaginationInput } from '@ssc/contracts';
+
 import { WithTenantInput } from '../../common';
+import { AccessToken } from './access-token.type';
 
 @InputType()
 export class CreateAccessTokenInput extends WithTenantInput {

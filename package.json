@@ -215,18 +215,18 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "@ultimatebackend/core/(.*)": "<rootDir>/libs/core/src/$1",
-      "@ultimatebackend/core": "<rootDir>/libs/core/src",
-      "@ultimatebackend/common/(.*)": "<rootDir>/libs/common/src/$1",
-      "@ultimatebackend/common": "<rootDir>/libs/common/src",
-      "@ultimatebackend/repository/(.*)": "<rootDir>/libs/repository/src/$1",
-      "@ultimatebackend/repository": "<rootDir>/libs/repository/src",
+      "@ssc/core/(.*)": "<rootDir>/libs/core/src/$1",
+      "@ssc/core": "<rootDir>/libs/core/src",
+      "@ssc/common/(.*)": "<rootDir>/libs/common/src/$1",
+      "@ssc/common": "<rootDir>/libs/common/src",
+      "@ssc/repository/(.*)": "<rootDir>/libs/repository/src/$1",
+      "@ssc/repository": "<rootDir>/libs/repository/src",
       "@juicycleff/repo-orm/(.*)": "<rootDir>/libs/repo-orm/src/$1",
       "@juicycleff/repo-orm": "<rootDir>/libs/repo-orm/src",
-      "@ultimatebackend/contracts/(.*)": "<rootDir>/libs/contracts/src/$1",
-      "@ultimatebackend/contracts": "<rootDir>/libs/contracts/src",
-      "@ultimatebackend/proto-schema/(.*)": "<rootDir>/libs/proto-schema/src/$1",
-      "@ultimatebackend/proto-schema": "<rootDir>/libs/proto-schema/src"
+      "@ssc/contracts/(.*)": "<rootDir>/libs/contracts/src/$1",
+      "@ssc/contracts": "<rootDir>/libs/contracts/src",
+      "@ssc/proto-schema/(.*)": "<rootDir>/libs/proto-schema/src/$1",
+      "@ssc/proto-schema": "<rootDir>/libs/proto-schema/src"
     }
   },
   "remarkConfig": {

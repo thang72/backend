@@ -1,11 +1,9 @@
 import { Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
+import { Member, ReadMemberResponse } from '@ssc/proto-schema/tenant';
+import { TenantRepository } from '@ssc/repository';
+
 import { GetMemberQuery } from '../../impl';
-import { TenantRepository } from '@ultimatebackend/repository';
-import {
-  Member,
-  ReadMemberResponse,
-} from '@ultimatebackend/proto-schema/tenant';
 
 @QueryHandler(GetMemberQuery)
 export class GetMemberHandler implements IQueryHandler<GetMemberQuery> {

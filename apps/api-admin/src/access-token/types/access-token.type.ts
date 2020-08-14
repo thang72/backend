@@ -1,6 +1,6 @@
-import { ObjectType, Directive, Field } from '@nestjs/graphql';
-import { Node } from '@ultimatebackend/contracts';
-import { Filterable } from '@ultimatebackend/core';
+import { Directive, Field, ObjectType } from '@nestjs/graphql';
+import { Node } from '@ssc/contracts';
+import { Filterable } from '@ssc/core';
 
 @Directive(`@key(fields: "id")`)
 @ObjectType()

@@ -1,5 +1,5 @@
 import { ICommand } from '@nestjs/cqrs';
-import { DeleteAccessRequest } from '@ultimatebackend/proto-schema/access';
+import { DeleteAccessRequest } from '@ssc/proto-schema/access';
 
 export class DeleteAccessCommand implements ICommand {
   constructor(

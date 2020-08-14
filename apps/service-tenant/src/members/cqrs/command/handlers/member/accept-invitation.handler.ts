@@ -1,15 +1,16 @@
+import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { TenantRepository } from '@ultimatebackend/repository';
+import { JwtService } from '@nestjs/jwt';
+import { RpcException } from '@nestjs/microservices';
+import { InvitationStatus } from '@ssc/contracts';
+import { RolesRpcClientService } from '@ssc/core';
 import {
   AcceptMemberInvitationResponse,
   Member,
-} from '@ultimatebackend/proto-schema/tenant';
+} from '@ssc/proto-schema/tenant';
+import { TenantRepository } from '@ssc/repository';
+
 import { AcceptInvitationCommand } from '../../impl';
-import { RolesRpcClientService } from '@ultimatebackend/core';
-import { JwtService } from '@nestjs/jwt';
-import { RpcException } from '@nestjs/microservices';
-import { InvitationStatus } from '@ultimatebackend/contracts';
-import { Logger } from '@nestjs/common';
 
 @CommandHandler(AcceptInvitationCommand)
 export class AcceptInvitationHandler

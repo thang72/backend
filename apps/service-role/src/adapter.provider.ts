@@ -1,9 +1,11 @@
-import { ConsulDatabaseConfig } from '@ultimatebackend/common';
+import { MongoAdapter } from 'casbin-mongodb-adapter';
+
 import { NEST_CONFIG_PROVIDER } from '@nestcloud/common';
 import { EtcdConfig } from '@nestcloud/config/etcd-config';
-import { MongoAdapter } from 'casbin-mongodb-adapter';
-import { CASBIN_CUSTOM_ADAPTER } from './constants';
 import { Module, Provider } from '@nestjs/common';
+import { ConsulDatabaseConfig } from '@ssc/common';
+
+import { CASBIN_CUSTOM_ADAPTER } from './constants';
 
 const jestMongoDb = global.__MONGO_URI__
   ? `${global.__MONGO_URI__}/${global.__MONGO_DB_NAME__}`

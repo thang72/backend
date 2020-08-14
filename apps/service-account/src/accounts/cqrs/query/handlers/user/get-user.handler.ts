@@ -1,7 +1,8 @@
+import { mongoParser } from '@juicycleff/repo-orm';
 import { Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { mongoParser } from '@juicycleff/repo-orm';
-import { UserRepository, UserEntity } from '@ultimatebackend/repository';
+import { UserEntity, UserRepository } from '@ssc/repository';
+
 import { GetUserQuery } from '../../impl';
 
 @QueryHandler(GetUserQuery)

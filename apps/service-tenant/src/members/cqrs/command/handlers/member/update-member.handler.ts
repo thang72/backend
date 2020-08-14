@@ -1,14 +1,12 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { TenantRepository } from '@ultimatebackend/repository';
-import { MemberUpdatedEvent } from '@ultimatebackend/core';
-import { UpdateMemberCommand } from '../../impl';
-import { AppRole, InvitationStatus } from '@ultimatebackend/contracts';
-import {
-  Member,
-  UpdateMemberResponse,
-} from '@ultimatebackend/proto-schema/tenant';
 import { RpcException } from '@nestjs/microservices';
+import { AppRole, InvitationStatus } from '@ssc/contracts';
+import { MemberUpdatedEvent } from '@ssc/core';
+import { Member, UpdateMemberResponse } from '@ssc/proto-schema/tenant';
+import { TenantRepository } from '@ssc/repository';
+
+import { UpdateMemberCommand } from '../../impl';
 
 @CommandHandler(UpdateMemberCommand)
 export class UpdateMemberHandler

@@ -1,13 +1,11 @@
+import { mongoParser } from '@juicycleff/repo-orm';
 import { Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import { mongoParser } from '@juicycleff/repo-orm';
-import { ProjectRepository } from '@ultimatebackend/repository';
-import { GetProjectsQuery } from '../../impl';
 import { RpcException } from '@nestjs/microservices';
-import {
-  FindProjectsResponse,
-  Project,
-} from '@ultimatebackend/proto-schema/project';
+import { FindProjectsResponse, Project } from '@ssc/proto-schema/project';
+import { ProjectRepository } from '@ssc/repository';
+
+import { GetProjectsQuery } from '../../impl';
 
 @QueryHandler(GetProjectsQuery)
 export class GetProjectsHandler implements IQueryHandler<GetProjectsQuery> {

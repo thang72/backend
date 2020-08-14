@@ -1,16 +1,18 @@
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { Logger } from '@nestjs/common';
-import { AccessTokenRepository } from '@ultimatebackend/repository';
-import { RpcException } from '@nestjs/microservices';
 import { DateTime } from 'luxon';
-import { CreateAccessResponse } from '@ultimatebackend/proto-schema/access';
-import { CreateAccessCommand } from '../../';
 import { NestCasbinService } from 'nestjs-casbin';
+
+import { Logger } from '@nestjs/common';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
+import { RpcException } from '@nestjs/microservices';
+import { AccessTokenCreatedEvent } from '@ssc/core';
+import { CreateAccessResponse } from '@ssc/proto-schema/access';
+import { AccessTokenRepository } from '@ssc/repository';
+
+import { CreateAccessCommand } from '../../';
 import {
   generateUniqueByte,
   mapAccessTokenEntityToProto,
 } from '../../../../utitlity';
-import { AccessTokenCreatedEvent } from '@ultimatebackend/core';
 
 /**
  * @implements {ICommandHandler<CreateAccessCommand>}

@@ -1,5 +1,6 @@
-import { InputType, ArgsType, Field, ID } from '@nestjs/graphql';
-import { FilterMongo, PaginationInput } from '@ultimatebackend/contracts';
+import { ArgsType, Field, ID, InputType } from '@nestjs/graphql';
+import { FilterMongo, PaginationInput } from '@ssc/contracts';
+
 import { Tenant, TenantSettings } from './tenant.type';
 
 @InputType()

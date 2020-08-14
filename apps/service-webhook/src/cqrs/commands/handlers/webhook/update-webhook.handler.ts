@@ -1,10 +1,11 @@
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { Logger } from '@nestjs/common';
-import { WebhookRepository } from '@ultimatebackend/repository';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { RpcException } from '@nestjs/microservices';
+import { WebhookUpdatedEvent } from '@ssc/core';
+import { CreateWebhookResponse } from '@ssc/proto-schema/webhook';
+import { WebhookRepository } from '@ssc/repository';
+
 import { UpdateWebhookCommand } from '../../';
-import { WebhookUpdatedEvent } from '@ultimatebackend/core';
-import { CreateWebhookResponse } from '@ultimatebackend/proto-schema/webhook';
 import { mapWebhookEntityToProto } from '../../../../utitlity';
 
 /**

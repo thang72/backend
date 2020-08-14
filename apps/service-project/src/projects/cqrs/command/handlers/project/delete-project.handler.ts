@@ -1,13 +1,11 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { ProjectRepository } from '@ultimatebackend/repository';
-import { ProjectDeletedEvent } from '@ultimatebackend/core';
-import { DeleteProjectCommand } from '../../impl';
-import {
-  DeleteProjectResponse,
-  Project,
-} from '@ultimatebackend/proto-schema/project';
 import { RpcException } from '@nestjs/microservices';
+import { ProjectDeletedEvent } from '@ssc/core';
+import { DeleteProjectResponse, Project } from '@ssc/proto-schema/project';
+import { ProjectRepository } from '@ssc/repository';
+
+import { DeleteProjectCommand } from '../../impl';
 
 @CommandHandler(DeleteProjectCommand)
 export class DeleteProjectHandler

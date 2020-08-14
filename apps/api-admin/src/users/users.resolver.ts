@@ -1,3 +1,4 @@
+import { UseGuards } from '@nestjs/common';
 import {
   Context,
   Mutation,
@@ -6,12 +7,12 @@ import {
   ResolveField,
   Resolver,
 } from '@nestjs/graphql';
-import { UseGuards } from '@nestjs/common';
-import { GqlAuthGuard, GqlContext } from '@ultimatebackend/core';
+import { CurrentUser } from '@ssc/common';
+import { GqlAuthGuard, GqlContext } from '@ssc/core';
+import * as Account from '@ssc/proto-schema/account';
+import { UserEntity } from '@ssc/repository';
+
 import { ProfileMutations, User } from './types';
-import { CurrentUser } from '@ultimatebackend/common';
-import { UserEntity } from '@ultimatebackend/repository';
-import * as Account from '@ultimatebackend/proto-schema/account';
 
 @Resolver(() => User)
 export class UsersResolver {

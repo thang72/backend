@@ -1,8 +1,10 @@
-import { PassportStrategy } from '@nestjs/passport';
-import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { GraphQLLocalStrategy } from 'graphql-passport';
+
+import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { PassportStrategy } from '@nestjs/passport';
+import { LoginServiceTypes } from '@ssc/proto-schema/account';
+
 import { AccountsService } from '../accounts.service';
-import { LoginServiceTypes } from '@ultimatebackend/proto-schema/account';
 
 @Injectable()
 export class LocalStrategy extends PassportStrategy(GraphQLLocalStrategy) {

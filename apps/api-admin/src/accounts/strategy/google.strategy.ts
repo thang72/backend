@@ -1,19 +1,21 @@
-import { PassportStrategy } from '@nestjs/passport';
+import { OAuth2Strategy } from 'passport-google-oauth';
+
+import { InjectConfig } from '@nestcloud/config';
+import { EtcdConfig } from '@nestcloud/config/etcd-config';
 import {
   Injectable,
   Logger,
   NotImplementedException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { OAuth2Strategy } from 'passport-google-oauth';
-import { AccountsService } from '../accounts.service';
-import { InjectConfig } from '@nestcloud/config';
-import { EtcdConfig } from '@nestcloud/config/etcd-config';
+import { PassportStrategy } from '@nestjs/passport';
 import {
-  LoginServiceTypes,
-  LoginRequest,
   CreateRequest,
-} from '@ultimatebackend/proto-schema/account';
+  LoginRequest,
+  LoginServiceTypes,
+} from '@ssc/proto-schema/account';
+
+import { AccountsService } from '../accounts.service';
 
 @Injectable()
 export class GoogleStrategy extends PassportStrategy(OAuth2Strategy) {

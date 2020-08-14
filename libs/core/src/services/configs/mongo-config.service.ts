@@ -1,8 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { MongoModuleOptions, MongoOptionsFactory } from '@juicycleff/repo-orm';
 import { InjectConfig } from '@nestcloud/config';
 import { EtcdConfig } from '@nestcloud/config/etcd-config';
-import { MongoModuleOptions, MongoOptionsFactory } from '@juicycleff/repo-orm';
-import { ConsulDatabaseConfig } from '@ultimatebackend/common';
+import { Injectable } from '@nestjs/common';
+import { ConsulDatabaseConfig } from '@ssc/common';
 
 const jestMongoDb = global.__MONGO_URI__
   ? `${global.__MONGO_URI__}/${global.__MONGO_DB_NAME__}`

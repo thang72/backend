@@ -1,16 +1,18 @@
-import { Injectable, Logger } from '@nestjs/common';
-import { ICommand, ofType, Saga } from '@nestjs/cqrs';
+import { Queue } from 'bull';
 import { Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
+
 import { InjectQueue } from '@nestjs/bull';
+import { Injectable, Logger } from '@nestjs/common';
+import { ICommand, Saga, ofType } from '@nestjs/cqrs';
 import {
   EmailVerifiedEvent,
   ForgotPasswordSentEvent,
   UserLoggedInEvent,
   UserRegisteredEvent,
   VerificationEmailSentEvent,
-} from '@ultimatebackend/core/cqrs';
-import { Queue } from 'bull';
+} from '@ssc/core/cqrs';
+
 import { QUEUE_PROCESS_IDS } from '../email.constants';
 
 @Injectable()

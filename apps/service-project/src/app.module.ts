@@ -1,10 +1,8 @@
-import { Module } from '@nestjs/common';
-import {
-  CoreModule,
-  ServiceRegistryModule,
-} from '@ultimatebackend/core/modules';
 import { MongoModule } from '@juicycleff/repo-orm/database';
-import { MongoMultiTenantConfigService } from '@ultimatebackend/core/mutiltenancy';
+import { Module } from '@nestjs/common';
+import { CoreModule, ServiceRegistryModule } from '@ssc/core/modules';
+import { MongoMultiTenantConfigService } from '@ssc/core/mutiltenancy';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProjectsModule } from './projects/projects.module';

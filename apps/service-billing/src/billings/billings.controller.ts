@@ -1,4 +1,7 @@
 import { Controller } from '@nestjs/common';
+import { CommandBus, QueryBus } from '@nestjs/cqrs';
+import { GrpcMethod } from '@nestjs/microservices';
+import { getIdentityFromCtx } from '@ssc/core';
 import {
   BillingService,
   CancelSubscriptionRequest,
@@ -41,20 +44,18 @@ import {
   ReadSubscriptionResponse,
   SetDefaultCardRequest,
   SetDefaultCardResponse,
-} from '@ultimatebackend/proto-schema/billing';
-import { GrpcMethod } from '@nestjs/microservices';
+} from '@ssc/proto-schema/billing';
+
 import { CardsService } from '../cards/cards.service';
-import { getIdentityFromCtx } from '@ultimatebackend/core';
-import { CommandBus, QueryBus } from '@nestjs/cqrs';
+import { PlansService } from '../plans/plans.service';
 import { CreateStripeCustomerCommand } from './cqrs/command/impl/customer';
 import {
   CancelSubscriptionCommand,
   ChangeSubscriptionCommand,
   CreateSubscriptionCommand,
 } from './cqrs/command/impl/subscription';
-import { GetPlanQuery, GetPlansQuery } from './cqrs/query/impl/plan';
-import { PlansService } from '../plans/plans.service';
 import { GetInvoicesQuery } from './cqrs/query/impl/invoice';
+import { GetPlanQuery, GetPlansQuery } from './cqrs/query/impl/plan';
 import {
   GetSubscriptionQuery,
   GetSubscriptionsQuery,

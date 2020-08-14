@@ -1,11 +1,10 @@
-import { Injectable, Logger } from '@nestjs/common';
-import { CommandBus, ICommand, ofType, Saga } from '@nestjs/cqrs';
 import { Observable } from 'rxjs';
 import { delay, map, switchMap } from 'rxjs/operators';
-import {
-  StripeUserCreatedEvent,
-  UserLoggedInEvent,
-} from '@ultimatebackend/core/cqrs';
+
+import { Injectable, Logger } from '@nestjs/common';
+import { CommandBus, ICommand, Saga, ofType } from '@nestjs/cqrs';
+import { StripeUserCreatedEvent, UserLoggedInEvent } from '@ssc/core/cqrs';
+
 import { UpdateUserCommand } from '../cqrs';
 
 @Injectable()

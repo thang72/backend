@@ -1,9 +1,11 @@
+import { join } from 'path';
+
 /* tslint:disable:ban-types */
 import { Logger, OnModuleInit } from '@nestjs/common';
+import { getMetadataStorage } from '@ssc/core/metadata';
+import { RolesRpcClientService } from '@ssc/core/services';
+
 import { IPermission, IResource } from '../interfaces';
-import { join } from 'path';
-import { getMetadataStorage } from '@ultimatebackend/core/metadata';
-import { RolesRpcClientService } from '@ultimatebackend/core/services';
 
 export class BaseModule implements OnModuleInit {
   constructor(private readonly clientService: RolesRpcClientService) {}

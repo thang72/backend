@@ -2,13 +2,13 @@ consul:
   host: ${{CONSUL_HOST}}
   port: 8500
 config:
-  key: ultimatebackend/config/${{ service.name }}
+  key: sunshine/config/${{ service.name }}
 nats:
   url: nats://${{NATS_HOST}}:4222
 redis:
   host: ${{REDIS_HOST}}
   port: 6379
-  password: ""
+  password: ''
 service:
   discoveryHost: ${{DISCOVERY_HOST}}
   healthCheck:
@@ -17,8 +17,8 @@ service:
     tcp: ${{ service.discoveryHost }}:${{ service.port }}
   maxRetry: 5
   retryInterval: 5000
-  tags: ["v1.0.0", "api"]
-  name: io.ultimatebackend.api.admin
+  tags: ['v1.0.0', 'api']
+  name: api.admin
   port: 4000
 loadbalance:
   ruleCls: RandomRule
@@ -47,11 +47,11 @@ logger:
       maxFiles: 14d
 app:
   auth:
-    sessionKey: "session.app"
-    domain: ""
+    sessionKey: 'session.app'
+    domain: ''
     resave: true
     rolling: true
     saveUninitialized: false
-    cookieMaxAge: "200H" # THIS SHOULD BE IN DURATION FORMAT 2S, 2H, 2M
+    cookieMaxAge: '200H' # THIS SHOULD BE IN DURATION FORMAT 2S, 2H, 2M
     secure: false
-    sessionSecret: "DKPp4JJyGdr3cPyHxxYJKb4m83AJLcNCjnt77GZG9Bh8PuBDNQBkj9BskcwvLQNB3zJhE5zkPkQjrEmzJzrsE74eAF8V4aZVMVkHFTEdGGAw6qpDkCKjNtDFd95"
+    sessionSecret: 'DKPp4JJyGdr3cPyHxxYJKb4m83AJLcNCjnt77GZG9Bh8PuBDNQBkj9BskcwvLQNB3zJhE5zkPkQjrEmzJzrsE74eAF8V4aZVMVkHFTEdGGAw6qpDkCKjNtDFd95'

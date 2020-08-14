@@ -1,10 +1,12 @@
-import { Logger } from '@nestjs/common';
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { Customer, StripeUserDeletedEvent } from '@ultimatebackend/core';
-import { DeleteStripeCustomerCommand } from '../../impl';
 import { InjectStripe } from 'nestjs-stripe';
 import * as Stripe from 'stripe';
+
+import { Logger } from '@nestjs/common';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { RpcException } from '@nestjs/microservices';
+import { Customer, StripeUserDeletedEvent } from '@ssc/core';
+
+import { DeleteStripeCustomerCommand } from '../../impl';
 
 @CommandHandler(DeleteStripeCustomerCommand)
 export class DeleteStripeCustomerHandler

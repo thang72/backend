@@ -1,6 +1,6 @@
 import { ICommand } from '@nestjs/cqrs';
-import { UserEntity } from '@ultimatebackend/repository/entities';
-import { CreateTenantRequest } from '@ultimatebackend/proto-schema/tenant';
+import { CreateTenantRequest } from '@ssc/proto-schema/tenant';
+import { UserEntity } from '@ssc/repository/entities';
 
 export class CreateTenantCommand implements ICommand {
   constructor(

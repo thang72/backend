@@ -1,6 +1,6 @@
 import { ICommand } from '@nestjs/cqrs';
-import { UserEntity } from '@ultimatebackend/repository';
-import { DeleteTenantRequest } from '@ultimatebackend/proto-schema/tenant';
+import { DeleteTenantRequest } from '@ssc/proto-schema/tenant';
+import { UserEntity } from '@ssc/repository';
 
 export class RemoveTenantCommand implements ICommand {
   constructor(

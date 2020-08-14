@@ -1,8 +1,9 @@
-import { Injectable, Logger } from '@nestjs/common';
-import { UserEntity } from '@ultimatebackend/repository';
 import { AuthenticationError } from 'apollo-server-express';
-import * as Account from '@ultimatebackend/proto-schema/account';
-import { AccountsRpcClientService } from '@ultimatebackend/core';
+
+import { Injectable, Logger } from '@nestjs/common';
+import { AccountsRpcClientService } from '@ssc/core';
+import * as Account from '@ssc/proto-schema/account';
+import { UserEntity } from '@ssc/repository';
 
 @Injectable()
 export class AccountsService {

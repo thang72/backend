@@ -1,21 +1,19 @@
 import {
-  ObjectType,
-  Field,
   Directive,
-  createUnionType,
-  InterfaceType,
+  Field,
   InputType,
+  InterfaceType,
+  ObjectType,
+  createUnionType,
 } from '@nestjs/graphql';
 import {
   Node,
   WebhookApiKeyFieldEnum,
-  WebhookCrudEnum,
-} from '@ultimatebackend/contracts';
-import { Filterable } from '@ultimatebackend/core/decorators';
-import {
-  WebhookHttpVerbEnum,
   WebhookAuthEnum,
-} from '@ultimatebackend/contracts';
+  WebhookCrudEnum,
+  WebhookHttpVerbEnum,
+} from '@ssc/contracts';
+import { Filterable } from '@ssc/core/decorators';
 
 @InputType('WebhookAuthTypeInput')
 @InterfaceType({

@@ -1,11 +1,13 @@
-import { Logger } from '@nestjs/common';
-import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { Customer, StripeUserCreatedEvent } from '@ultimatebackend/core';
-import { CreateStripeCustomerCommand } from '../../impl';
 import { InjectStripe } from 'nestjs-stripe';
 import * as Stripe from 'stripe';
+
+import { Logger } from '@nestjs/common';
+import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { RpcException } from '@nestjs/microservices';
-import { CreateCustomerResponse } from '@ultimatebackend/proto-schema/billing';
+import { Customer, StripeUserCreatedEvent } from '@ssc/core';
+import { CreateCustomerResponse } from '@ssc/proto-schema/billing';
+
+import { CreateStripeCustomerCommand } from '../../impl';
 
 /**
  * @class

@@ -1,10 +1,10 @@
-import { Injectable } from '@nestjs/common';
-import { InjectConfig, ConsulConfig } from '@nestcloud/config';
+import { ConsulConfig, InjectConfig } from '@nestcloud/config';
 import {
   BullModuleOptions,
   BullOptionsFactory,
 } from '@nestjs/bull/dist/interfaces/bull-module-options.interface';
-import { ConsulDatabaseConfig } from '@ultimatebackend/common';
+import { Injectable } from '@nestjs/common';
+import { ConsulDatabaseConfig } from '@ssc/common';
 
 @Injectable()
 export class BullConfigService implements BullOptionsFactory {

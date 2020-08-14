@@ -1,8 +1,9 @@
-import { Logger, CACHE_MANAGER, Inject, CacheStore } from '@nestjs/common';
+import { CACHE_MANAGER, CacheStore, Inject, Logger } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { RpcException } from '@nestjs/microservices';
-import { Plan, ReadPlanResponse } from '@ultimatebackend/proto-schema/billing';
-import { PlanRepository } from '@ultimatebackend/repository';
+import { Plan, ReadPlanResponse } from '@ssc/proto-schema/billing';
+import { PlanRepository } from '@ssc/repository';
+
 import { GetPlanQuery } from '../../impl';
 
 @QueryHandler(GetPlanQuery)

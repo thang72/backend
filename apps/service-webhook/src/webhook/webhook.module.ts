@@ -1,12 +1,13 @@
-import { Module } from '@nestjs/common';
-import { WebhookController } from './webhook.controller';
 import {
   EventStoreModule,
   EventStoreSubscriptionType,
 } from '@juicycleff/nestjs-event-store';
-import { WebhookEventHandlers } from '@ultimatebackend/core';
+import { Module } from '@nestjs/common';
+import { WebhookEventHandlers } from '@ssc/core';
+import { WebhookRepository } from '@ssc/repository';
+
 import { WebhookCommandHandlers, WebhookQueryHandlers } from '../cqrs';
-import { WebhookRepository } from '@ultimatebackend/repository';
+import { WebhookController } from './webhook.controller';
 
 @Module({
   imports: [

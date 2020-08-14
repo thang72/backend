@@ -1,16 +1,18 @@
+import { NestCasbinModule } from 'nestjs-casbin';
+
+import { MongoModule } from '@juicycleff/repo-orm';
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import {
   CoreModule,
   MongoConfigService,
   ServiceRegistryModule,
-} from '@ultimatebackend/core';
-import { NestCasbinModule } from 'nestjs-casbin';
+} from '@ssc/core';
+
 import { AccessTokenModule } from './access-token/access-token.module';
-import { MongoModule } from '@juicycleff/repo-orm';
-import { CasbinUserConfigService } from './casbin-config';
 import { AdapterProviderModule } from './adapter.provider';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { CasbinUserConfigService } from './casbin-config';
 
 @Module({
   imports: [

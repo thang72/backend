@@ -1,6 +1,7 @@
 import { randomBytes } from 'crypto';
-import { WebhookEntity } from '@ultimatebackend/repository';
-import { Webhook } from '@ultimatebackend/proto-schema/webhook';
+
+import { Webhook } from '@ssc/proto-schema/webhook';
+import { WebhookEntity } from '@ssc/repository';
 
 export async function generateUniqueByte() {
   const buffer = await randomBytes(12);

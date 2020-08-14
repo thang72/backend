@@ -1,17 +1,12 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { TenantRepository } from '@ultimatebackend/repository';
-import {
-  MemberRemovedEvent,
-  RolesRpcClientService,
-} from '@ultimatebackend/core';
-import { AppRole, InvitationStatus } from '@ultimatebackend/contracts';
-import { RemoveMemberCommand } from '../../impl';
 import { RpcException } from '@nestjs/microservices';
-import {
-  DeleteMemberResponse,
-  Member,
-} from '@ultimatebackend/proto-schema/tenant';
+import { AppRole, InvitationStatus } from '@ssc/contracts';
+import { MemberRemovedEvent, RolesRpcClientService } from '@ssc/core';
+import { DeleteMemberResponse, Member } from '@ssc/proto-schema/tenant';
+import { TenantRepository } from '@ssc/repository';
+
+import { RemoveMemberCommand } from '../../impl';
 
 @CommandHandler(RemoveMemberCommand)
 export class RemoveMemberHandler

@@ -1,17 +1,7 @@
 import { Controller } from '@nestjs/common';
-import { GrpcMethod, RpcException } from '@nestjs/microservices';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
-import {
-  VerifyEmailCommand,
-  RegisterUserCommand,
-  ResendVerificationEmailCommand,
-  LoginUserCommand,
-  GetUserQuery,
-  ForgotPasswordCommand,
-  UpdateUserPasswordCommand,
-  UpdateUserCommand,
-} from './cqrs';
-
+import { JwtService } from '@nestjs/jwt';
+import { GrpcMethod, RpcException } from '@nestjs/microservices';
 import {
   AccountService,
   CreateRequest,
@@ -41,8 +31,18 @@ import {
   VerifyAccountResponse,
   VerifyActivationLinkRequest,
   VerifyActivationLinkResponse,
-} from '@ultimatebackend/proto-schema';
-import { JwtService } from '@nestjs/jwt';
+} from '@ssc/proto-schema';
+
+import {
+  ForgotPasswordCommand,
+  GetUserQuery,
+  LoginUserCommand,
+  RegisterUserCommand,
+  ResendVerificationEmailCommand,
+  UpdateUserCommand,
+  UpdateUserPasswordCommand,
+  VerifyEmailCommand,
+} from './cqrs';
 
 @Controller('accounts')
 export class AccountsController implements AccountService<any> {

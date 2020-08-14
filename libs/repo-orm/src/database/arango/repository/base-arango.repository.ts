@@ -1,10 +1,12 @@
 import { DocumentCollection, EdgeCollection } from 'arangojs';
+import { AqlQuery, aql } from 'arangojs/lib/cjs/aql-query';
+import { ArrayCursor } from 'arangojs/lib/cjs/cursor';
+import { QueryOptions } from 'arangojs/lib/cjs/database';
+import { InsertOptions, UpdateOptions } from 'arangojs/lib/cjs/util/types';
+
 import { CacheStore, Logger } from '@nestjs/common';
-import {
-  ArangoCollectionProps,
-  ArangoDBSource,
-  ArangoIndexDefinition,
-} from '../interfaces';
+import { cleanEmptyProperties } from '@ssc/common';
+
 import { DataEvents } from '../../../enums';
 import {
   COLLECTION_KEY,
@@ -15,12 +17,12 @@ import {
   UpdateByIdRequest,
   UpdateRequest,
 } from '../../../interfaces';
-import { cleanEmptyProperties } from '@ultimatebackend/common';
-import { InsertOptions, UpdateOptions } from 'arangojs/lib/cjs/util/types';
-import { aql, AqlQuery } from 'arangojs/lib/cjs/aql-query';
-import { ArrayCursor } from 'arangojs/lib/cjs/cursor';
-import { QueryOptions } from 'arangojs/lib/cjs/database';
 import { arangoQueryBuilder } from '../../../utils';
+import {
+  ArangoCollectionProps,
+  ArangoDBSource,
+  ArangoIndexDefinition,
+} from '../interfaces';
 
 // that class only can be extended
 export class BaseArangoRepository<DOC, DTO = DOC> {

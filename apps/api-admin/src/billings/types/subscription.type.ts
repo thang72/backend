@@ -1,10 +1,10 @@
 import {
   Directive,
-  ObjectType,
   Field,
   GraphQLISODateTime,
+  ObjectType,
 } from '@nestjs/graphql';
-import { Node } from '@ultimatebackend/contracts';
+import { Node } from '@ssc/contracts';
 
 @Directive(`@key(fields: "id")`)
 @ObjectType()

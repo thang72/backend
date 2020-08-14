@@ -1,6 +1,6 @@
 import { IQuery } from '@nestjs/cqrs';
-import { FindTenantRequest } from '@ultimatebackend/proto-schema/tenant';
-import { UserEntity } from '@ultimatebackend/repository';
+import { FindTenantRequest } from '@ssc/proto-schema/tenant';
+import { UserEntity } from '@ssc/repository';
 
 export class GetTenantsQuery implements IQuery {
   constructor(
